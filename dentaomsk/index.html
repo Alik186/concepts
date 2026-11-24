@@ -442,6 +442,7 @@ rSvc();rDoc();rDays();rTimes();
   const h=document.getElementById('hdr');addEventListener('scroll',()=>h.classList.toggle('sc',scrollY>10),{passive:true});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv,.mask').forEach(el=>io.observe(el));
+  function chk(){document.querySelectorAll('.rv:not(.in),.mask:not(.in),#heroPh:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.94)e.classList.add('in')})}chk();addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);addEventListener('load',chk);setTimeout(chk,300);
   // prices
   const P={
     'Терапия':[['Первичный приём и консультация стоматолога','500 ₽'],['Пломба (химическое отверждение)','2 000 ₽'],['Пломба','3 500 ₽'],['Пломба из фотополимера, IV класс по Блэку','5 500 ₽'],['Запечатывание фиссуры герметиком','3 000 ₽']],
