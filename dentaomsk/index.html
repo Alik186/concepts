@@ -3,256 +3,472 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Дента Люкс — салон косметической стоматологии в Омске (концепт сайта)</title>
+<title>Дента Люкс — салон косметической стоматологии, Омск (концепт редизайна)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#2a1a24;--mut:#7d6b75;--rose:#b5537c;--rose2:#94406a;--blush:#fbeef3;--blush2:#f5dde7;--cream:#fffaf7;--line:#efdfe6}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.w{width:min(1200px,100% - 40px);margin-inline:auto}
-.pr{font-family:Prata,serif;font-weight:400}
-.ribbon{background:var(--ink);color:#e8d6df;font-size:12.5px;text-align:center;padding:8px 16px}.ribbon b{color:#fff}
-header{border-bottom:1px solid var(--line);background:rgba(255,250,247,.9);backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
-.hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
-nav{display:flex;gap:24px;font-size:14px;font-weight:600;color:var(--mut)}nav a:hover{color:var(--rose)}
-.logo{font-family:Prata,serif;font-size:26px;text-align:center;line-height:1}.logo small{display:block;font-family:Manrope;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-top:4px}
-.hdr .hr{justify-self:end;display:flex;gap:18px;align-items:center}
-.tel{font-weight:700;font-size:15px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:14.5px;transition:.2s}
-.btn-r{background:var(--rose);color:#fff;box-shadow:0 12px 26px -14px var(--rose)}.btn-r:hover{background:var(--rose2)}
-.btn-o{border:1.5px solid var(--ink)}.btn-o:hover{background:var(--ink);color:#fff}
+:root{
+  --wine:#4a1628; --wine2:#330616; --rose:#db9ab1; --rose2:#c97d99; --blush:#f8ecf0; --powder:#f3e2e8;
+  --cream:#fcf9f7; --ink:#2b1520; --mut:#7a6670; --line:#ead9df;
+  --sec:128px; --gap:28px; --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.65;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.w{width:min(1240px,100% - 56px);margin-inline:auto}
+section{padding:var(--sec) 0}
+.slab{font-family:'Roboto Slab',serif;font-weight:300}
+.label{font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--rose2)}
+.label.lt{color:var(--rose)}
+h1,h2{font-family:'Roboto Slab',serif;font-weight:300;letter-spacing:-.02em}
+h2{font-size:clamp(34px,4vw,56px);line-height:1.08;margin-top:20px}
+h2 b{font-weight:500;color:var(--wine)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:58px;padding:0 34px;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;transition:background .25s,color .25s,box-shadow .25s}
+.btn-w{background:var(--wine);color:#fff}.btn-w:hover{background:var(--wine2)}
+.btn-l{box-shadow:inset 0 0 0 1px var(--wine);color:var(--wine)}.btn-l:hover{background:var(--wine);color:#fff}
+.btn-r{background:var(--rose);color:var(--wine2)}.btn-r:hover{background:#e7b1c4}
+.line-link{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--rose);padding-bottom:6px}
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.mask{overflow:hidden}
+.mask img{transform:scale(1.12);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.mask.in img{transform:scale(1)}
+
+/* ribbon / header */
+.ribbon{background:var(--wine2);color:#e6c5d1;font-size:12.5px;text-align:center;padding:9px 16px;letter-spacing:.02em}.ribbon b{color:#fff;font-weight:600}
+.rs{display:none}
+header{position:sticky;top:0;z-index:50;background:rgba(252,249,247,.9);backdrop-filter:blur(14px);transition:box-shadow .3s}
+header.sc{box-shadow:0 1px 0 var(--line)}
+.hdr{height:88px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.hdr nav{display:flex;gap:30px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.hdr nav a:hover{color:var(--wine)}
+.mark{text-align:center;line-height:1}
+.mark b{display:block;font-family:'Roboto Slab',serif;font-weight:400;font-size:26px;letter-spacing:.18em;color:var(--wine)}
+.mark span{display:block;margin-top:6px;font-size:9.5px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--rose2)}
+.hdr .side{justify-self:end;display:flex;align-items:center;gap:26px}
+.hdr .tel{font-weight:700;font-size:15px;letter-spacing:.02em}
+.hdr .btn{height:48px;padding:0 24px;font-size:12.5px}
+
 /* hero */
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:60px 0 90px}
-.big28{font-family:Prata,serif;font-size:clamp(150px,20vw,270px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--rose);letter-spacing:-.04em}
-.big28 span{font-size:.18em;-webkit-text-stroke:0;color:var(--rose);letter-spacing:0;font-family:Manrope;font-weight:700;vertical-align:top;margin-left:10px;display:inline-block;margin-top:.6em;line-height:1.2;text-transform:uppercase}
-h1{font-family:Prata,serif;font-weight:400;font-size:clamp(34px,4.2vw,56px);line-height:1.1;margin:26px 0 18px}
-h1 i{color:var(--rose)}
-.lead{color:var(--mut);font-size:17.5px;max-width:520px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero{padding:40px 0 0;position:relative}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:0;align-items:stretch;min-height:640px}
+.hero-txt{background:var(--blush);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-txt .big{font-family:'Roboto Slab',serif;font-weight:300;font-size:clamp(110px,14vw,210px);line-height:.82;color:var(--wine);letter-spacing:-.05em}
+.hero-txt .big sup{font-family:Manrope;font-size:.16em;font-weight:800;letter-spacing:.2em;text-transform:uppercase;vertical-align:top;margin-left:14px;color:var(--rose2);position:relative;top:.9em;line-height:1.3;display:inline-block}
+.hero-txt h1{font-size:clamp(30px,3.2vw,44px);line-height:1.15;margin:36px 0 20px;max-width:15em}
+.hero-txt h1 b{font-weight:500;color:var(--wine)}
+.hero-txt p{color:var(--mut);max-width:30em}
+.hero-txt .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
 .hero-ph{position:relative}
-.hero-ph .img{aspect-ratio:4/5;border-radius:260px 260px 28px 28px;overflow:hidden;background:var(--blush2)}
 .hero-ph img{width:100%;height:100%;object-fit:cover}
-.pt{position:absolute;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 20px 40px -22px rgba(42,26,36,.4);font-size:13.5px;color:var(--mut)}
-.pt b{display:block;color:var(--ink);font-size:20px;font-family:Prata,serif;font-weight:400}
-.pt1{left:-40px;bottom:90px}.pt2{right:-20px;top:70px}
-/* marquee */
-.mq{background:var(--ink);color:#f3e3ea;overflow:hidden;white-space:nowrap;padding:18px 0}
-.mq div{display:inline-block;animation:mq 30s linear infinite;font-family:Prata,serif;font-size:22px}
-.mq span{margin:0 26px;color:var(--rose)}
-@keyframes mq{to{transform:translateX(-50%)}}
-section{padding:110px 0}
-.kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);font-weight:700}
-h2{font-family:Prata,serif;font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.1;margin:12px 0 16px}
-h2 i{color:var(--rose)}
-.sub{color:var(--mut);font-size:17px;max-width:620px}
+.hero-ph .tag{position:absolute;left:-64px;bottom:56px;background:var(--wine);color:#fff;padding:26px 30px;max-width:260px}
+.hero-ph .tag b{display:block;font-family:'Roboto Slab',serif;font-weight:300;font-size:44px;line-height:1}
+.hero-ph .tag span{display:block;margin-top:8px;font-size:13.5px;color:#e6c5d1}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.facts div{padding:32px 28px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Slab',serif;font-weight:400;font-size:22px;color:var(--wine)}
+.facts span{font-size:14px;color:var(--mut)}
+
+/* services */
+.svc-head{display:grid;grid-template-columns:5fr 7fr;gap:var(--gap);align-items:end;margin-bottom:64px}
+.svc-head p{color:var(--mut);max-width:32em}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.s{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 36px 36px;position:relative;transition:background .35s;cursor:pointer;min-height:280px;display:flex;flex-direction:column}
+.s:hover{background:#fff}
+.s .no{font-family:'Roboto Slab',serif;font-weight:300;font-size:15px;color:var(--rose2)}
+.s h3{font-family:'Roboto Slab',serif;font-weight:400;font-size:26px;line-height:1.2;margin:18px 0 12px;color:var(--wine)}
+.s p{font-size:15px;color:var(--mut);flex:1}
+.s .pr{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:18px;border-top:1px dashed var(--line);font-size:14px;color:var(--mut)}
+.s .pr b{font-family:'Roboto Slab',serif;font-weight:400;font-size:20px;color:var(--wine)}
+.s:after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--rose);transition:width .45s}
+.s:hover:after{width:100%}
+
+/* gallery */
+.gal{background:var(--wine2);color:#fff;padding:var(--sec) 0 calc(var(--sec) - 20px);overflow:hidden}
+.gal h2{color:#fff}.gal h2 b{color:var(--rose)}
+.gal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px}
+.gal-top p{color:#c9a9b5;max-width:28em}
+.gal .ctrl{display:flex;gap:10px}
+.gal .ctrl button{width:56px;height:56px;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:background .25s,border-color .25s}
+.gal .ctrl button:hover{background:var(--rose);border-color:var(--rose);color:var(--wine2)}
+.gal .ctrl svg{width:20px;height:20px}
+.strip{display:flex;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:max(28px,calc((100vw - 1240px)/2));padding-right:28px;cursor:grab}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:none;width:min(520px,78vw);scroll-snap-align:start}
+.strip figure .ph{aspect-ratio:4/3;overflow:hidden}
+.strip figure img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{display:flex;justify-content:space-between;margin-top:18px;font-size:14px;color:#c9a9b5}
+.strip figcaption b{font-family:'Roboto Slab',serif;font-weight:400;font-size:19px;color:#fff}
+
 /* prices */
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0 26px}
-.tab{padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);font-weight:700;font-size:14px;color:var(--mut);transition:.2s;background:#fff}
-.tab:hover{border-color:var(--rose);color:var(--rose)}.tab.on{background:var(--rose);border-color:var(--rose);color:#fff}
-.plist{background:#fff;border-radius:28px;border:1px solid var(--line);padding:10px 34px}
-.prow{display:flex;align-items:baseline;gap:14px;padding:18px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.prices{display:grid;grid-template-columns:4fr 8fr;gap:72px;align-items:start}
+.tabs{display:flex;flex-direction:column;margin-top:40px;border-top:1px solid var(--line)}
+.tab{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--mut);text-align:left;transition:color .2s,padding .3s}
+.tab:after{content:"→";opacity:0;transition:opacity .2s}
+.tab:hover{color:var(--wine)}
+.tab.on{color:var(--wine);padding-left:14px}
+.tab.on:after{opacity:1}
+.plist{background:#fff;padding:20px 48px;min-height:420px;box-shadow:0 30px 80px -60px rgba(74,22,40,.5)}
+.prow{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);animation:fi .45s both}
 .prow:last-child{border-bottom:0}
-.prow .dots{flex:1;border-bottom:1px dotted #d8c3cd;transform:translateY(-4px)}
-.prow b{font-family:Prata,serif;font-weight:400;font-size:19px;white-space:nowrap;color:var(--rose2)}
-.pnote{font-size:13px;color:var(--mut);margin-top:14px}
-/* salon split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.collage{position:relative;height:560px}
-.collage .a,.collage .b{position:absolute;overflow:hidden;border-radius:24px}
-.collage img{width:100%;height:100%;object-fit:cover}
-.collage .a{left:0;top:0;width:72%;height:78%}
-.collage .b{right:0;bottom:0;width:52%;height:52%;border:8px solid var(--cream)}
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
-.feat div{padding:20px;border-radius:20px;background:var(--blush)}
-.feat b{display:block;font-family:Prata,serif;font-weight:400;font-size:20px;margin-bottom:4px}
-.feat span{font-size:14px;color:var(--mut)}
+.prow b{font-family:'Roboto Slab',serif;font-weight:400;font-size:21px;color:var(--wine);white-space:nowrap}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.pnote{margin-top:16px;font-size:13px;color:var(--mut)}
+
+/* lab */
+.lab{display:grid;grid-template-columns:6fr 6fr;gap:0;align-items:stretch;background:var(--powder)}
+.lab .ph{min-height:560px}.lab .ph img{width:100%;height:100%;object-fit:cover}
+.lab .tx{padding:96px 80px;display:flex;flex-direction:column;justify-content:center}
+.lab .tx p{color:var(--mut);margin-top:22px;max-width:30em}
+.lab ul{list-style:none;margin-top:32px;display:grid;gap:14px}
+.lab li{display:flex;gap:16px;align-items:baseline;font-weight:600}
+.lab li:before{content:"";flex:none;width:22px;height:1px;background:var(--wine);transform:translateY(-5px)}
+
 /* team */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-.doc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}
-.av{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:Prata,serif;font-size:22px;color:#fff;margin-bottom:14px}
-.doc b{display:block;font-size:15.5px;line-height:1.35}.doc span{font-size:13.5px;color:var(--mut)}
+.team{display:grid;grid-template-columns:4fr 8fr;gap:72px}
+.tlist{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+.tp{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:baseline;transition:padding .3s}
+.tp:hover{padding-left:10px}
+.tp b{font-weight:700;font-size:16px}
+.tp span{font-size:13.5px;color:var(--mut);text-align:right}
+.tp.lead b{color:var(--wine)}
+
 /* reviews */
-.rvw{background:var(--blush)}
-.rv{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-.r{background:#fff;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:16px}
-.r q{font-family:Prata,serif;font-size:17.5px;line-height:1.45;quotes:none}
-.r .who{margin-top:auto;font-size:13.5px;color:var(--mut)}
+.rev{background:var(--blush)}
+.rev-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center}
+.score b{display:block;font-family:'Roboto Slab',serif;font-weight:300;font-size:140px;line-height:.9;color:var(--wine)}
+.score span{display:block;margin-top:12px;color:var(--mut)}
+.quote{position:relative;min-height:240px}
+.qi{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s;pointer-events:none}
+.qi.on{opacity:1;transform:none;pointer-events:auto}
+.qi q{display:block;font-family:'Roboto Slab',serif;font-weight:300;font-size:clamp(24px,2.6vw,34px);line-height:1.35;quotes:none;color:var(--ink)}
+.qi cite{display:block;margin-top:28px;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rose2)}
+.dots{display:flex;gap:10px;margin-top:32px}
+.dots button{width:36px;height:3px;background:var(--line);transition:background .3s}
+.dots button.on{background:var(--wine)}
+
+/* docs */
+.docs{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap)}
+.docs a{display:block;background:#fff;padding:12px;box-shadow:0 0 0 1px var(--line);transition:transform .35s,box-shadow .35s}
+.docs a:hover{transform:translateY(-8px);box-shadow:0 0 0 1px var(--rose),0 24px 50px -30px rgba(74,22,40,.5)}
+.docs img{aspect-ratio:7/10;object-fit:cover;width:100%}
+.docs span{display:block;margin-top:12px;font-size:13px;font-weight:600;color:var(--mut);text-align:center}
+
 /* booking */
-.book{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
-.form{background:#fff;border:1px solid var(--line);border-radius:30px;padding:32px;box-shadow:0 30px 60px -40px rgba(42,26,36,.35)}
-.st{margin-bottom:20px}.st label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.bk{display:grid;grid-template-columns:5fr 7fr;gap:0;background:#fff;box-shadow:0 40px 100px -70px rgba(74,22,40,.6)}
+.bk .lft{position:relative;min-height:100%}
+.bk .lft img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bk .lft:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(51,6,22,.15),rgba(51,6,22,.88))}
+.bk .lft .in{position:relative;z-index:2;height:100%;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.bk .lft h2{color:#fff;font-size:clamp(30px,3vw,42px)}
+.bk dl{display:grid;gap:22px;margin-top:36px}
+.bk dt{font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rose)}
+.bk dd{margin-top:6px;font-size:16px;line-height:1.5}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:2px 20px;font-size:15px}.hours .today{color:var(--rose);font-weight:700}
+.form{padding:56px}
+.fs{margin-bottom:30px}
+.fs label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rose2);margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14px;background:#fff;transition:.15s}
-.chip:hover{border-color:var(--rose)}.chip.on{background:var(--rose);border-color:var(--rose);color:#fff}
-.chip.day{display:flex;flex-direction:column;align-items:center;min-width:64px;line-height:1.2;border-radius:16px}.chip.day small{font-size:10.5px;text-transform:uppercase;opacity:.75}
+.chip{height:44px;padding:0 18px;box-shadow:inset 0 0 0 1px var(--line);font-size:14.5px;font-weight:600;transition:.2s;background:#fff}
+.chip:hover{box-shadow:inset 0 0 0 1px var(--wine)}
+.chip.on{background:var(--wine);color:#fff;box-shadow:none}
+.chip.day{height:60px;min-width:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2}
+.chip.day small{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
 .chip:disabled{opacity:.3;text-decoration:line-through;cursor:not-allowed}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-input{width:100%;font:inherit;font-size:15px;padding:13px 16px;border-radius:14px;border:1.5px solid var(--line);outline:none;color:var(--ink);background:var(--cream)}input:focus{border-color:var(--rose)}
-.form .btn{width:100%;margin-top:6px;padding:16px}
-.small{font-size:12px;color:var(--mut);text-align:center;margin-top:10px}
-#bk-done{display:none;text-align:center;padding:36px 10px}#bk-done .ok{width:74px;height:74px;border-radius:50%;background:var(--blush);color:var(--rose);display:grid;place-items:center;margin:0 auto 14px;font-size:32px}
-#bk-done h3{font-family:Prata,serif;font-weight:400;font-size:28px;margin-bottom:8px}#bk-done p{color:var(--mut)}
-.demo{margin-top:16px;font-size:13px;background:var(--blush);border-radius:14px;padding:12px}
-.ct{display:grid;gap:22px;margin-top:30px}.ct dt{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.ct dd{font-size:17px;font-weight:600;margin-top:3px}
-.hours{display:grid;grid-template-columns:auto 1fr;gap:3px 20px;font-size:15px;font-weight:500}.hours .today{color:var(--rose);font-weight:800}
-footer{border-top:1px solid var(--line);padding:36px 0 60px;color:var(--mut);font-size:13.5px}.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input{width:100%;height:56px;border:0;border-bottom:1px solid var(--line);padding:0 2px;font:inherit;font-size:16px;color:var(--ink);outline:none;background:transparent;border-radius:0}
+input:focus{border-color:var(--wine)}
+.form .btn{width:100%;margin-top:10px}
+.note{font-size:12px;color:var(--mut);text-align:center;margin-top:14px}
+#bk-done{display:none;text-align:center;padding:40px 0}
+#bk-done .ok{font-family:'Roboto Slab',serif;font-weight:300;font-size:72px;color:var(--wine);line-height:1}
+#bk-done h3{font-family:'Roboto Slab',serif;font-weight:400;font-size:30px;margin-top:12px;color:var(--wine)}
+#bk-done p{color:var(--mut);margin-top:10px}
+.demo{margin-top:22px;font-size:13.5px;color:var(--mut);background:var(--blush);padding:14px}
+
+footer{padding:56px 0;font-size:13.5px;color:var(--mut);border-top:1px solid var(--line)}
+.ft{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.ft .mark{text-align:left}.ft .mark b{font-size:20px}
 .mbar{display:none}
-@media(max-width:1000px){nav,.tel{display:none}.hdr{grid-template-columns:auto 1fr}.logo{text-align:left}.hero,.split,.book{grid-template-columns:1fr}.hero-ph{max-width:460px;margin:0 auto}.team,.rv{grid-template-columns:1fr 1fr}.collage{height:440px}}
-@media(max-width:620px){section{padding:76px 0}.hero{padding:30px 0 60px;gap:40px}.pt1{left:0}.pt2{right:0}.team,.rv,.feat{grid-template-columns:1fr}.plist{padding:6px 18px}.prow{font-size:14.5px}.form{padding:20px}.row2{grid-template-columns:1fr}.collage{height:360px}.hdr .hr .btn{padding:11px 16px}
-.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:8px}.mbar a{flex:1;padding:14px}footer{padding-bottom:110px}}
+
+@media (max-width:1100px){
+  .hdr{grid-template-columns:auto 1fr}.hdr nav,.hdr .tel{display:none}.mark{text-align:left}
+  .hero-grid,.svc-head,.prices,.lab,.team,.rev-grid,.bk{grid-template-columns:1fr}
+  .hero-txt{padding:56px 40px}.hero-ph{height:460px}.hero-ph .tag{left:24px;bottom:24px}
+  .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .svc{grid-template-columns:1fr 1fr}
+  .tabs{flex-direction:row;flex-wrap:wrap;gap:8px;border:0}.tab{padding:10px 16px;border:1px solid var(--line)}.tab:after{display:none}.tab.on{padding-left:16px;background:var(--wine);color:#fff;border-color:var(--wine)}
+  .lab .tx{padding:56px 40px}.lab .ph{min-height:380px}
+  .docs{grid-template-columns:repeat(3,1fr)}
+  .bk .lft{min-height:520px}
+  .prices,.team,.rev-grid{gap:40px}
+}
+@media (max-width:640px){
+  :root{--sec:80px;--gap:16px}
+  .w{width:calc(100% - 32px)}
+  .rl{display:none}.rs{display:inline}
+  .hdr{height:72px}.mark b{font-size:20px}.mark span{font-size:8px;letter-spacing:.26em}.hdr .btn{height:42px;padding:0 16px;font-size:11.5px}
+  .hero{padding-top:16px}.hero-txt{padding:44px 24px}.hero-txt .ctas .btn{flex:1}
+  .hero-ph{height:340px}.hero-ph .tag{padding:18px 20px}.hero-ph .tag b{font-size:32px}
+  .facts div{padding:22px 18px}
+  .svc{grid-template-columns:1fr}.s{min-height:0;padding:32px 24px}
+  .gal-top{flex-direction:column;align-items:flex-start}
+  .strip{padding-left:16px;padding-right:16px}
+  .plist{padding:8px 20px}.prow{grid-template-columns:1fr;gap:4px;padding:18px 0}
+  .lab .tx{padding:48px 24px}.lab .ph{min-height:280px}
+  .tlist{grid-template-columns:1fr}
+  .score b{font-size:96px}
+  .quote{min-height:300px}
+  .docs{grid-template-columns:1fr 1fr}
+  .bk .lft{min-height:auto}.bk .lft .in{padding:40px 24px}.form{padding:32px 20px}.row2{grid-template-columns:1fr}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60}.mbar .btn{flex:1;height:60px}
+  footer{padding-bottom:100px}
+}
 </style>
 </head>
 <body>
-<div class="ribbon"><b>Концепт сайта для клиники «Дента Люкс»</b> — подготовлен Pixel Forge на основе открытых данных и прайса клиники. Фото иллюстративные, запись демонстрационная.</div>
-<header><div class="w hdr">
-  <nav><a href="#prices">Цены</a><a href="#salon">О клинике</a><a href="#team">Врачи</a><a href="#reviews">Отзывы</a></nav>
-  <a class="logo" href="#top">Дента Люкс<small>салон косметической стоматологии</small></a>
-  <div class="hr"><a class="tel" href="tel:+79139880555">+7 (913) 988-05-55</a><a class="btn btn-r" href="#book">Записаться</a></div>
+<div class="ribbon"><b>Концепт редизайна сайта dentalux-omsk.ru</b><span class="rl"> — подготовлен Pixel Forge на основе фотографий, прайса и материалов вашего сайта. Запись на странице демонстрационная.</span><span class="rs"> · Pixel Forge</span></div>
+
+<header id="hdr"><div class="w hdr">
+  <nav><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#team">Команда</a><a href="#book">Контакты</a></nav>
+  <a class="mark" href="#top"><b>ДЕНТА ЛЮКС</b><span>салон косметической стоматологии</span></a>
+  <div class="side"><a class="tel" href="tel:+79139880555">+7 (913) 988-05-55</a><a class="btn btn-w" href="#book">Записаться</a></div>
 </div></header>
 
 <main id="top">
-<div class="w hero">
-  <div>
-    <div class="big28">28<span>лет<br>с вами</span></div>
-    <h1>Красивая улыбка — <i>в&nbsp;центре Омска</i></h1>
-    <p class="lead">Терапия, ортодонтия, протезирование из собственной лаборатории, имплантация и кабинет косметолога. К нам ходят семьями — больше двадцати лет.</p>
-    <div class="cta"><a class="btn btn-r" href="#book">Записаться онлайн</a><a class="btn btn-o" href="#prices">Смотреть цены</a></div>
-  </div>
-  <div class="hero-ph">
-    <div class="img"><img src="https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?auto=format&fit=crop&w=1000&q=80" alt=""></div>
-    <div class="pt pt1"><b>500 ₽</b>первичная консультация</div>
-    <div class="pt pt2"><b>4,6 ★</b>83 оценки на Картах</div>
-  </div>
-</div>
-
-<div class="mq"><div>Терапия<span>✦</span>Ортодонтия<span>✦</span>Протезирование<span>✦</span>Имплантация<span>✦</span>Отбеливание<span>✦</span>Косметология<span>✦</span>Терапия<span>✦</span>Ортодонтия<span>✦</span>Протезирование<span>✦</span>Имплантация<span>✦</span>Отбеливание<span>✦</span>Косметология<span>✦</span></div></div>
-
-<section id="prices">
+<section class="hero">
   <div class="w">
-    <span class="kick">Прайс</span>
-    <h2>Цены — <i>открыто</i>, без звонков и уточнений</h2>
-    <p class="sub">Основные услуги из прайса клиники. Точную стоимость лечения врач назовёт после осмотра.</p>
-    <div class="tabs" id="tabs"></div>
-    <div class="plist" id="plist"></div>
-    <p class="pnote">Имеются противопоказания, необходима консультация специалиста.</p>
+    <div class="hero-grid">
+      <div class="hero-txt">
+        <div class="big rv">28<sup>лет<br>с вами</sup></div>
+        <h1 class="rv d1">Красивая и здоровая улыбка <b>в самом центре Омска</b></h1>
+        <p class="rv d2">Терапия, ортопедия, хирургия, ортодонтия, собственная зуботехническая лаборатория и кабинет косметолога — на Ильинской, 17.</p>
+        <div class="ctas rv d3"><a class="btn btn-w" href="#book">Записаться онлайн</a><a class="btn btn-l" href="#prices">Цены</a></div>
+      </div>
+      <div class="hero-ph mask rv d1" id="heroPh">
+        <img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_05_2645-1024x683.jpg" alt="Кабинет клиники Дента Люкс">
+        <div class="tag"><b>500 ₽</b><span>первичный приём и консультация стоматолога</span></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="rv"><b>28 лет</b><span>заботимся об улыбках омичей</span></div>
+      <div class="rv d1"><b>Лаборатория</b><span>коронки без посредников</span></div>
+      <div class="rv d2"><b>Рентген</b><span>диагностика на месте</span></div>
+      <div class="rv d3"><b>4,6 ★</b><span>83 оценки на Яндекс Картах</span></div>
+    </div>
   </div>
 </section>
 
-<section id="salon" style="padding-top:0">
-  <div class="w split">
-    <div class="collage">
-      <div class="a"><img src="https://images.unsplash.com/photo-1643660526741-094639fbe53a?auto=format&fit=crop&w=1000&q=80" alt=""></div>
-      <div class="b"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80" alt=""></div>
+<section id="services">
+  <div class="w">
+    <div class="svc-head">
+      <div><span class="label rv">Стоматологические услуги</span><h2 class="rv d1">Всё — <b>в одном салоне</b></h2></div>
+      <p class="rv d2">Шесть направлений стоматологии и косметология. Цены — из действующего прайса клиники, точную стоимость врач назовёт после осмотра.</p>
+    </div>
+    <div class="svc">
+      <a href="#book" class="s rv" data-svc="Лечение кариеса"><span class="no">01</span><h3>Терапия</h3><p>Лечение кариеса и каналов, реставрации из светоотверждаемых материалов.</p><div class="pr">пломба<b>от 2 000 ₽</b></div></a>
+      <a href="#book" class="s rv d1" data-svc="Протезирование"><span class="no">02</span><h3>Ортопедия</h3><p>Металлокерамические и цельнолитые коронки, протезирование на имплантах.</p><div class="pr">коронка<b>от 6 000 ₽</b></div></a>
+      <a href="#book" class="s rv d2" data-svc="Удаление"><span class="no">03</span><h3>Хирургия</h3><p>Удаление зубов, синус-лифтинг и костная пластика, имплантация.</p><div class="pr">удаление<b>от 2 000 ₽</b></div></a>
+      <a href="#book" class="s rv" data-svc="Брекеты"><span class="no">04</span><h3>Ортодонтия</h3><p>Брекет-системы, съёмные и несъёмные аппараты для детей и взрослых.</p><div class="pr">брекеты<b>от 30 000 ₽</b></div></a>
+      <a href="#book" class="s rv d1" data-svc="Консультация"><span class="no">05</span><h3>Рентгендиагностика</h3><p>Снимок в день приёма — без поездок в другие центры.</p><div class="pr">приём<b>500 ₽</b></div></a>
+      <a href="#book" class="s rv d2" data-svc="Косметология"><span class="no">06</span><h3>Косметология</h3><p>Кабинет косметолога — уход за лицом в той же клинике.</p><div class="pr">консультация<b>700 ₽</b></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="gal" id="gallery">
+  <div class="w gal-top">
+    <div><span class="label lt rv">Клиника</span><h2 class="rv d1">Добро пожаловать <b>в Дента Люкс</b></h2></div>
+    <div class="ctrl rv d2"><button id="gp" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button id="gn" aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+  </div>
+  <div class="strip rv" id="strip">
+    <figure><div class="ph"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_05_2645-1024x683.jpg" alt="" loading="lazy"></div><figcaption><b>Кабинет</b><span>01</span></figcaption></figure>
+    <figure><div class="ph"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_17_0919-scaled.jpg" alt="" loading="lazy"></div><figcaption><b>Оборудование</b><span>02</span></figcaption></figure>
+    <figure><div class="ph"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_26_0946-1024x683.jpg" alt="" loading="lazy"></div><figcaption><b>Зуботехническая лаборатория</b><span>03</span></figcaption></figure>
+    <figure><div class="ph"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_28_0952-1024x683.jpg" alt="" loading="lazy"></div><figcaption><b>Вход с Ильинской</b><span>04</span></figcaption></figure>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="w prices">
+    <div>
+      <span class="label rv">Прайс-лист</span>
+      <h2 class="rv d1">Цены <b>открыто</b></h2>
+      <div class="tabs rv d2" id="tabs"></div>
     </div>
     <div>
-      <span class="kick">О клинике</span>
-      <h2>Не просто стоматология, а <i>салон</i></h2>
-      <p class="sub">Терапевты, ортопеды, хирург, ортодонт, зубной техник и косметолог работают в одной клинике на Ильинской — в двух шагах от Краеведческого музея.</p>
-      <div class="feat">
-        <div><b>Своя лаборатория</b><span>Коронки и протезы — без посредников и лишних недель ожидания</span></div>
-        <div><b>Рентген на месте</b><span>Диагностика в день приёма</span></div>
-        <div><b>Детский кабинет</b><span>Лечим и взрослых, и детей</span></div>
-        <div><b>Косметолог</b><span>Уход за лицом в той же клинике</span></div>
-      </div>
+      <div class="plist rv d1" id="plist"></div>
+      <p class="pnote">Имеются противопоказания, необходима консультация специалиста.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w lab">
+    <div class="ph mask rv"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_26_0946-1024x683.jpg" alt="Лаборатория" loading="lazy"></div>
+    <div class="tx">
+      <span class="label rv">Своё производство</span>
+      <h2 class="rv d1">Зуботехническая <b>лаборатория</b> в клинике</h2>
+      <p class="rv d2">Коронки и протезы делает наш зубной техник прямо здесь, а врач-ортопед контролирует каждый этап. Без посредников и недель ожидания.</p>
+      <ul class="rv d3"><li>Металлокерамика и цельнолитые коронки</li><li>Протезирование на имплантах</li><li>Ремонт и коррекция конструкций</li></ul>
     </div>
   </div>
 </section>
 
 <section id="team" style="padding-top:0">
-  <div class="w">
-    <span class="kick">Команда</span>
-    <h2>Врачи, к которым <i>возвращаются</i></h2>
-    <div class="team">
-      <div class="doc"><div class="av" style="background:#b5537c">Е</div><b>Гнедова Елена Валентиновна</b><span>главный врач, стоматолог-терапевт, ортодонт</span></div>
-      <div class="doc"><div class="av" style="background:#2a1a24">Ю</div><b>Никулин Юрий Николаевич</b><span>стоматолог-ортопед</span></div>
-      <div class="doc"><div class="av" style="background:#c4866b">Л</div><b>Смирнова Людмила Ивановна</b><span>стоматолог-ортопед, хирург</span></div>
-      <div class="doc"><div class="av" style="background:#8a6f9c">А</div><b>Ячников Андрей Анатольевич</b><span>зубной техник</span></div>
+  <div class="w team">
+    <div><span class="label rv">Сотрудники</span><h2 class="rv d1">Команда <b>салона</b></h2></div>
+    <div class="tlist">
+      <div class="tp lead rv"><b>Гнедова Елена Валентиновна</b><span>главный врач, терапевт, ортодонт</span></div>
+      <div class="tp rv"><b>Басаргина Лариса Вячеславовна</b><span>стоматолог-ортопед</span></div>
+      <div class="tp rv d1"><b>Никулин Юрий Николаевич</b><span>стоматолог-ортопед</span></div>
+      <div class="tp rv d1"><b>Смирнова Людмила Ивановна</b><span>ортопед, хирург</span></div>
+      <div class="tp rv d2"><b>Заводских Вячеслав Викторович</b><span>стоматолог-ортопед</span></div>
+      <div class="tp rv d2"><b>Капотина Татьяна Николаевна</b><span>стоматолог-ортопед</span></div>
+      <div class="tp rv"><b>Топчуева Елена Владимировна</b><span>стоматолог-терапевт</span></div>
+      <div class="tp rv"><b>Раманаускене Лиля Александровна</b><span>стоматолог-терапевт</span></div>
+      <div class="tp rv d1"><b>Дмитриева Владлена Владимировна</b><span>стоматолог-терапевт</span></div>
+      <div class="tp rv d1"><b>Григорович Оксана Викторовна</b><span>зубной врач</span></div>
+      <div class="tp rv d2"><b>Ячников Андрей Анатольевич</b><span>зубной техник</span></div>
+      <div class="tp rv d2"><b>Щедрина Оксана Александровна</b><span>косметолог</span></div>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="rvw">
-  <div class="w">
-    <span class="kick">Отзывы</span>
-    <h2>4,6 на Яндекс Картах · <i>83 оценки</i></h2>
-    <div class="rv">
-      <div class="r"><q>Пользуемся услугами этой клиники больше двадцати лет! Всей семьёй только сюда.</q><div class="who">Ольга</div></div>
-      <div class="r"><q>Хорошая чистая клиника, администратор приветливый, цены доступные. Было комфортно и не страшно.</q><div class="who">Максим З.</div></div>
-      <div class="r"><q>Уютная обстановка, вежливый персонал, приемлемые цены. Советую всем.</q><div class="who">Наталья П.</div></div>
-      <div class="r"><q>Лечимся более 20 лет. Всё прекрасно.</q><div class="who">Александр Ш.</div></div>
+<section class="rev" id="reviews">
+  <div class="w rev-grid">
+    <div class="score rv"><span class="label">Отзывы</span><b style="margin-top:20px">4,6</b><span>83 оценки на Яндекс Картах</span><a class="line-link" style="margin-top:28px" href="https://yandex.ru/maps/org/denta_lyuks/1023816186/reviews/" target="_blank" rel="noopener">Все отзывы →</a></div>
+    <div class="rv d1">
+      <div class="quote" id="quote">
+        <div class="qi on"><q>«Пользуемся услугами этой клиники больше двадцати лет! Елена Валентиновна — супер специалист своего дела. Всей семьёй только к ней!»</q><cite>Ольга</cite></div>
+        <div class="qi"><q>«Хорошая чистая клиника, администратор приветливый, цены доступные. На приёме у Людмилы Ивановны было очень комфортно и не страшно.»</q><cite>Максим З.</cite></div>
+        <div class="qi"><q>«Уже 9 лет хожу только к Елене Валентиновне: санация, брекеты, протезирование, чистка. В кресле можно заснуть — в прямом смысле.»</q><cite>Нургуль Р.</cite></div>
+        <div class="qi"><q>«Замечательный доктор Елена Валентиновна Гнедова. Ортопед Юрий Николаевич Никулин — профессионал своего дела.»</q><cite>Нина</cite></div>
+      </div>
+      <div class="dots" id="dots"></div>
     </div>
   </div>
 </section>
 
-<section id="book">
-  <div class="w book">
-    <div>
-      <span class="kick">Онлайн-запись</span>
-      <h2>Запись, которая <i>не потеряется</i></h2>
-      <p class="sub">Выберите услугу, день и время. Заявка сразу попадает в журнал записи, а вы получаете подтверждение — без звонков и ожидания ответа в мессенджере.</p>
-      <dl class="ct">
-        <div><dt>Адрес</dt><dd>Омск, Ильинская ул., 17</dd></div>
-        <div><dt>Телефоны</dt><dd><a href="tel:+79139880555">+7 (913) 988-05-55</a> · <a style="color:var(--rose)" href="https://wa.me/79139880555">WhatsApp</a><br><a href="tel:+73812302735">+7 (3812) 30-27-35</a></dd></div>
-        <div><dt>Часы работы</dt><dd class="hours" id="hours"></dd></div>
-      </dl>
+<section id="docs">
+  <div class="w">
+    <div class="svc-head" style="margin-bottom:48px"><div><span class="label rv">Документация</span><h2 class="rv d1">Лицензия <b>и документы</b></h2></div><p class="rv d2">Работаем официально — лицензия и свидетельства открыты для пациентов.</p></div>
+    <div class="docs">
+      <a class="rv" href="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%861-707x1024.jpg" target="_blank" rel="noopener"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%861-707x1024.jpg" alt="" loading="lazy"><span>Лицензия, лист 1</span></a>
+      <a class="rv d1" href="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%862-700x1024.jpg" target="_blank" rel="noopener"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%862-700x1024.jpg" alt="" loading="lazy"><span>Лицензия, лист 2</span></a>
+      <a class="rv d2" href="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%863-697x1024.jpg" target="_blank" rel="noopener"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%863-697x1024.jpg" alt="" loading="lazy"><span>Лицензия, лист 3</span></a>
+      <a class="rv d3" href="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%864-727x1024.jpg" target="_blank" rel="noopener"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%BB%D0%B8%D1%864-727x1024.jpg" alt="" loading="lazy"><span>Лицензия, лист 4</span></a>
+      <a class="rv" href="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%B5%D0%B3%D1%80%D1%8E%D0%BB2-720x1024.jpg" target="_blank" rel="noopener"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/%D0%B5%D0%B3%D1%80%D1%8E%D0%BB2-720x1024.jpg" alt="" loading="lazy"><span>Свидетельство ОГРН</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="w bk">
+    <div class="lft">
+      <img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_28_0952-1024x683.jpg" alt="" loading="lazy">
+      <div class="in">
+        <span class="label lt">Как нас найти</span>
+        <h2>Ильинская, 17 — рядом с Краеведческим музеем</h2>
+        <dl>
+          <div><dt>Телефоны</dt><dd><a href="tel:+79139880555">+7 (913) 988-05-55</a> · <a href="https://wa.me/79139880555">WhatsApp</a><br><a href="tel:+73812302735">+7 (3812) 30-27-35</a> · <a href="tel:+73812302736">30-27-36</a></dd></div>
+          <div><dt>Часы работы</dt><dd class="hours" id="hours"></dd></div>
+        </dl>
+      </div>
     </div>
     <div class="form">
+      <span class="label">Онлайн-запись</span>
+      <h2 style="font-size:clamp(28px,2.6vw,38px);margin:14px 0 36px">Запись, которая <b>не потеряется</b></h2>
       <div id="bk-form">
-        <div class="st"><label>Услуга</label><div class="chips" id="bk-svc"></div></div>
-        <div class="st"><label>День</label><div class="chips" id="bk-days"></div></div>
-        <div class="st"><label>Время</label><div class="chips" id="bk-times"></div></div>
-        <div class="st"><label>Контакты</label><div class="row2"><input id="bk-nm" placeholder="Ваше имя"><input id="bk-ph" placeholder="+7 (___) ___-__-__" inputmode="tel"></div></div>
-        <button class="btn btn-r" id="bk-send">Записаться</button>
-        <p class="small">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+        <div class="fs"><label>Услуга</label><div class="chips" id="bk-svc"></div></div>
+        <div class="fs"><label>Врач</label><div class="chips" id="bk-doc"></div></div>
+        <div class="fs"><label>День</label><div class="chips" id="bk-days"></div></div>
+        <div class="fs"><label>Время</label><div class="chips" id="bk-times"></div></div>
+        <div class="fs"><label>Контакты</label><div class="row2"><input id="bk-nm" placeholder="Ваше имя" autocomplete="name"><input id="bk-ph" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel"></div></div>
+        <button class="btn btn-w" id="bk-send">Записаться</button>
+        <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
       </div>
-      <div id="bk-done"><div class="ok">✓</div><h3>Вы записаны</h3><p id="bk-sum"></p><div class="demo">Это демонстрация. В рабочей версии заявка мгновенно попадает к администратору, а вам приходит подтверждение.</div><button class="btn btn-o" id="bk-again" style="margin-top:16px">Записаться ещё</button></div>
+      <div id="bk-done"><div class="ok">✓</div><h3>Вы записаны</h3><p id="bk-sum"></p><div class="demo">Это демонстрация. В рабочей версии заявка сразу попадает в журнал записи и к администратору, а пациенту приходит подтверждение.</div><button class="btn btn-l" id="bk-again" style="margin-top:22px">Записаться ещё</button></div>
     </div>
   </div>
 </section>
 </main>
-<footer><div class="w ft"><span>© 2026 Салон косметической стоматологии «Дента Люкс», Омск</span><span>Концепт сайта — Pixel Forge · t.me/pixelforgeweb</span></div></footer>
-<div class="mbar"><a class="btn btn-o" style="background:#fff" href="tel:+79139880555">Позвонить</a><a class="btn btn-r" href="#book">Записаться</a></div>
-<script>
-(function(){
-const P={
-'Терапия':[['Первичный приём и консультация стоматолога','500 ₽'],['Пломба (химическое отверждение)','2 000 ₽'],['Пломба','3 500 ₽'],['Пломба из фотополимера, IV класс','5 500 ₽'],['Запечатывание фиссуры герметиком','3 000 ₽']],
-'Ортодонтия':[['Брекет-система','от 30 000 ₽'],['Несъёмный ортодонтический аппарат','от 42 000 ₽'],['Съёмный ортодонтический аппарат','10 000 ₽']],
-'Протезирование':[['Коронка металлокерамическая','9 000 ₽'],['Коронка цельнолитая','6 000 ₽'],['Восстановление зуба коронкой','от 8 000 ₽'],['Коронка пластмассовая (временная)','1 000 ₽']],
-'Имплантация':[['Внутрикостная дентальная имплантация','28 000 ₽'],['Протезирование на импланте','19 000 – 25 000 ₽'],['Синус-лифтинг, костная пластика','от 16 000 ₽'],['Индивидуальный абатмент','5 500 ₽']],
-'Гигиена и отбеливание':[['Профгигиена AirFlow','5 000 ₽'],['Ультразвуковое удаление зубных отложений','4 000 ₽'],['Профессиональное отбеливание','8 500 ₽']],
-'Хирургия':[['Удаление постоянного зуба','4 000 ₽'],['Удаление временного зуба','2 000 ₽']],
-'Косметология':[['Консультация косметолога','700 ₽']]
-};
-const tabs=document.getElementById('tabs'),list=document.getElementById('plist');let cur='Терапия';
-function draw(){tabs.innerHTML='';Object.keys(P).forEach(k=>{const b=document.createElement('button');b.className='tab'+(k===cur?' on':'');b.textContent=k;b.onclick=()=>{cur=k;draw()};tabs.appendChild(b)});
-list.innerHTML=P[cur].map(r=>'<div class="prow"><span>'+r[0]+'</span><span class="dots"></span><b>'+r[1]+'</b></div>').join('')}
-draw();
-})();
-</script>
+
+<footer><div class="w ft">
+  <a class="mark" href="#top"><b>ДЕНТА ЛЮКС</b><span>салон косметической стоматологии</span></a>
+  <span>Омск, Ильинская ул., 17 · © 2026</span>
+  <span>Концепт редизайна — Pixel Forge · t.me/pixelforgeweb</span>
+</div></footer>
+<div class="mbar"><a class="btn btn-l" style="background:#fff" href="tel:+79139880555">Позвонить</a><a class="btn btn-w" href="#book">Записаться</a></div>
+
+<script>window.PF_DOCS=['Любой врач','Гнедова Е. В.','Никулин Ю. Н.','Смирнова Л. И.','Басаргина Л. В.','Топчуева Е. В.'];</script>
 <script>(function(){
 const SV=["Консультация", "Лечение кариеса", "Брекеты", "Протезирование", "Имплантация", "Удаление", "Гигиена", "Отбеливание", "Косметология"];
 const HRS={1: [9, 19], 2: [9, 19], 3: [9, 19], 4: [9, 19], 5: [9, 19], 6: [10, 14], 0: null};
 const DN=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
 const DFULL=['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
 const MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
-const st={svc:SV[0],day:null,time:null};
+const DOCS=window.PF_DOCS||null;
+const st={svc:SV[0],doc:DOCS?DOCS[0]:null,day:null,time:null};
 const $=id=>document.getElementById(id);
 if(!$('bk-svc'))return;
 function chip(p,label,on,fn,cls,dis){const b=document.createElement('button');b.type='button';b.className='chip '+(cls||'')+(on?' on':'');b.innerHTML=label;b.disabled=!!dis;b.onclick=fn;p.appendChild(b)}
 function days(){const out=[],n=new Date(),d=new Date();d.setHours(0,0,0,0);const h=HRS[n.getDay()];if(!h||n.getHours()+n.getMinutes()/60>=h[1]-1)d.setDate(d.getDate()+1);while(out.length<6){if(HRS[d.getDay()])out.push(new Date(d));d.setDate(d.getDate()+1)}return out}
 function busy(k,h,m){let x=7;for(const c of k+h+':'+m)x=(x*31+c.charCodeAt(0))%101;return x%3===0}
 function rSvc(){const p=$('bk-svc');p.innerHTML='';SV.forEach(s=>chip(p,s,st.svc===s,()=>{st.svc=s;rSvc()}))}
+function rDoc(){const p=$('bk-doc');if(!p||!DOCS)return;p.innerHTML='';DOCS.forEach(d=>chip(p,d,st.doc===d,()=>{st.doc=d;rDoc()}))}
+window.pfPickDoc=function(v){if(DOCS&&DOCS.includes(v)){st.doc=v;rDoc()}};
 function rDays(){const p=$('bk-days');p.innerHTML='';const today=new Date().toDateString();days().forEach((d,i)=>{const k=d.toDateString();if(!st.day)st.day=k;chip(p,'<small>'+(k===today?'сегодня':DN[d.getDay()])+'</small>'+d.getDate()+' '+MON[d.getMonth()],st.day===k,()=>{st.day=k;st.time=null;rDays();rTimes()},'day')})}
 function rTimes(){const p=$('bk-times');p.innerHTML='';const d=new Date(st.day),hr=HRS[d.getDay()],now=new Date();for(let h=hr[0];h<hr[1];h++)for(const m of [0,30]){const t=new Date(d);t.setHours(h,m);const l=h+':'+(m?'30':'00');chip(p,l,st.time===l,()=>{st.time=l;rTimes()},'',t<=now||busy(st.day,h,m))}}
 window.pfPickService=function(v){if(SV.includes(v)){st.svc=v;rSvc()}};
 $('bk-ph').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);let o='+7';if(v.length>1)o+=' ('+v.slice(1,4);if(v.length>=4)o+=') '+v.slice(4,7);if(v.length>=7)o+='-'+v.slice(7,9);if(v.length>=9)o+='-'+v.slice(9,11);e.target.value=o});
-$('bk-send').onclick=()=>{const nm=$('bk-nm').value.trim(),ph=$('bk-ph').value.replace(/\D/g,'');if(!st.time){$('bk-times').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'none'}],{duration:300});return}if(!nm){$('bk-nm').focus();return}if(ph.length<11){$('bk-ph').focus();return}const d=new Date(st.day);$('bk-sum').textContent=nm+', вы записаны: '+st.svc.toLowerCase()+', '+DFULL[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+', '+st.time+'.';$('bk-form').style.display='none';$('bk-done').style.display='block'};
+$('bk-send').onclick=()=>{const nm=$('bk-nm').value.trim(),ph=$('bk-ph').value.replace(/\D/g,'');if(!st.time){$('bk-times').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'none'}],{duration:300});return}if(!nm){$('bk-nm').focus();return}if(ph.length<11){$('bk-ph').focus();return}const d=new Date(st.day);$('bk-sum').textContent=nm+', вы записаны: '+st.svc.toLowerCase()+', '+DFULL[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+', '+st.time+(st.doc&&st.doc!=='Любой врач'?', врач: '+st.doc:'');if(!/\.$/.test($('bk-sum').textContent))$('bk-sum').textContent+='.';$('bk-form').style.display='none';$('bk-done').style.display='block'};
 $('bk-again').onclick=()=>{$('bk-form').style.display='';$('bk-done').style.display='none';st.time=null;rTimes()};
 document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>pfPickService(a.dataset.svc)));
+document.querySelectorAll('[data-doc]').forEach(a=>a.addEventListener('click',()=>pfPickDoc(a.dataset.doc)));
 const hp=$('hours');if(hp){const td=new Date().getDay();[1,2,3,4,5,6,0].forEach(i=>{const a=document.createElement('span'),b=document.createElement('span');a.textContent=DFULL[i][0].toUpperCase()+DFULL[i].slice(1);b.textContent=HRS[i]?String(HRS[i][0]).padStart(2,'0')+':00 – '+HRS[i][1]+':00':'выходной';if(i===td)a.className=b.className='today';hp.append(a,b)})}
-rSvc();rDays();rTimes();
+rSvc();rDoc();rDays();rTimes();
+})();
+</script>
+<script>
+(function(){
+  const h=document.getElementById('hdr');addEventListener('scroll',()=>h.classList.toggle('sc',scrollY>10),{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv,.mask').forEach(el=>io.observe(el));
+  // prices
+  const P={
+    'Терапия':[['Первичный приём и консультация стоматолога','500 ₽'],['Пломба (химическое отверждение)','2 000 ₽'],['Пломба','3 500 ₽'],['Пломба из фотополимера, IV класс по Блэку','5 500 ₽'],['Запечатывание фиссуры герметиком','3 000 ₽']],
+    'Ортодонтия':[['Брекет-система','от 30 000 ₽'],['Несъёмный ортодонтический аппарат','от 42 000 ₽'],['Съёмный ортодонтический аппарат','10 000 ₽']],
+    'Ортопедия':[['Коронка металлокерамическая','9 000 ₽'],['Коронка цельнолитая','6 000 ₽'],['Восстановление зуба коронкой','от 8 000 ₽'],['Коронка пластмассовая','1 000 ₽']],
+    'Имплантация':[['Внутрикостная дентальная имплантация','28 000 ₽'],['Протезирование зуба с использованием имплантата','19 000 – 25 000 ₽'],['Синус-лифтинг, костная пластика','от 16 000 ₽'],['Индивидуальный абатмент','5 500 ₽']],
+    'Гигиена и отбеливание':[['Профессиональная гигиена AirFlow','5 000 ₽'],['Ультразвуковое удаление зубных отложений','4 000 ₽'],['Профессиональное отбеливание','8 500 ₽']],
+    'Хирургия':[['Удаление постоянного зуба','4 000 ₽'],['Удаление временного зуба','2 000 ₽']],
+    'Косметология':[['Приём косметолога, первичный или повторный','700 ₽']]
+  };
+  const tabs=document.getElementById('tabs'),list=document.getElementById('plist');let cur='Терапия';
+  function draw(){tabs.innerHTML='';Object.keys(P).forEach(k=>{const b=document.createElement('button');b.className='tab'+(k===cur?' on':'');b.textContent=k;b.onclick=()=>{cur=k;draw()};tabs.appendChild(b)});
+    list.innerHTML=P[cur].map((r,i)=>'<div class="prow" style="animation-delay:'+(i*.05)+'s"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>').join('')}
+  draw();
+  // gallery arrows + drag
+  const st=document.getElementById('strip');
+  document.getElementById('gn').onclick=()=>st.scrollBy({left:st.clientWidth*.6,behavior:'smooth'});
+  document.getElementById('gp').onclick=()=>st.scrollBy({left:-st.clientWidth*.6,behavior:'smooth'});
+  let dn=false,sx=0,sl=0;st.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=st.scrollLeft;st.style.scrollSnapType='none'});
+  addEventListener('pointerup',()=>{if(dn){dn=false;st.style.scrollSnapType=''}});
+  addEventListener('pointermove',e=>{if(dn)st.scrollLeft=sl-(e.clientX-sx)});
+  // quotes
+  const qs=[...document.querySelectorAll('.qi')],dots=document.getElementById('dots');let qi=0,t;
+  qs.forEach((_,i)=>{const b=document.createElement('button');b.onclick=()=>{go(i);restart()};dots.appendChild(b)});
+  function go(i){qs[qi].classList.remove('on');dots.children[qi].classList.remove('on');qi=i;qs[qi].classList.add('on');dots.children[qi].classList.add('on')}
+  function restart(){clearInterval(t);t=setInterval(()=>go((qi+1)%qs.length),6000)}
+  go(0);restart();
 })();
 </script>
 </body>
