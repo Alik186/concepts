@@ -3,259 +3,388 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Денталюкс+ — сложная имплантация в Казани (концепт сайта)</title>
+<title>Денталюкс+ — сложная имплантация и стоматология в Казани (концепт сайта)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0f0e12;--bg2:#17151b;--card:#1d1b22;--line:#2c2932;--tx:#efe9df;--mut:#a39d93;--gold:#c9a063;--gold2:#e4c48d}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.w{width:min(1200px,100% - 40px);margin-inline:auto}
-.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
-.gold{color:var(--gold2)}
-.ribbon{background:#000;color:#bdb6aa;font-size:12.5px;text-align:center;padding:8px 16px;position:relative;z-index:30}.ribbon b{color:var(--gold2)}
-header{position:absolute;left:0;right:0;z-index:20}
-.hdr{display:flex;align-items:center;gap:30px;height:84px}
-.logo{font-weight:800;font-size:22px;letter-spacing:-.01em}.logo b{color:var(--gold)}
-nav{display:flex;gap:26px;font-size:14.5px;color:#d6d0c6;font-weight:600}nav a:hover{color:var(--gold2)}
-.hdr .hr{margin-left:auto;display:flex;align-items:center;gap:20px}
-.tel{font-weight:700;font-size:15px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:2px;font-weight:700;font-size:14.5px;letter-spacing:.02em;transition:.25s}
-.btn-g{background:var(--gold);color:#16130e}.btn-g:hover{background:var(--gold2)}
-.btn-l{border:1px solid rgba(239,233,223,.35)}.btn-l:hover{border-color:var(--gold2);color:var(--gold2)}
+:root{
+  --bg:#0e0e10; --bg2:#151518; --bg3:#1c1c20; --line:#2a2a30; --tx:#f1ede6; --mut:#9a958d; --gold:#c8a46a; --gold2:#e2c48f;
+  --sec:136px; --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter Tight',system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--tx);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.w{width:min(1280px,100% - 64px);margin-inline:auto}
+section{padding:var(--sec) 0}
+.k{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.k:before{content:"";width:32px;height:1px;background:var(--gold)}
+h1{font-size:clamp(46px,7.2vw,112px);font-weight:500;line-height:.95;letter-spacing:-.045em}
+h2{font-size:clamp(36px,4.6vw,68px);font-weight:500;line-height:1;letter-spacing:-.04em;margin-top:24px}
+h1 em,h2 em{font-style:normal;color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;font-weight:600;font-size:15.5px;transition:background .3s,color .3s,box-shadow .3s}
+.btn-g{background:var(--gold);color:#111}.btn-g:hover{background:var(--gold2)}
+.btn-o{box-shadow:inset 0 0 0 1px rgba(241,237,230,.3)}.btn-o:hover{box-shadow:inset 0 0 0 1px var(--gold2);color:var(--gold2)}
+.btn svg{width:18px;height:18px}
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.16,.8,.24,1),transform 1s cubic-bezier(.16,.8,.24,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+.ribbon{background:#000;color:#8f8a82;font-size:12.5px;text-align:center;padding:9px 16px;position:relative;z-index:70}.ribbon b{color:var(--gold2);font-weight:500}
+.rs{display:none}
+header{position:fixed;left:0;right:0;top:36px;z-index:60;transition:background .4s,top .3s,backdrop-filter .4s}
+header.sc{top:0;background:rgba(14,14,16,.82);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+.hdr{height:84px;display:flex;align-items:center;gap:48px}
+.logo{font-size:23px;font-weight:600;letter-spacing:-.02em}.logo b{color:var(--gold);font-weight:600}
+.hdr nav{display:flex;gap:34px;font-size:14.5px;color:#cfc9c0}.hdr nav a:hover{color:var(--gold2)}
+.hdr .side{margin-left:auto;display:flex;align-items:center;gap:28px}
+.hdr .tel{font-weight:600;font-size:15px}
+.hdr .btn{height:48px;padding:0 24px;font-size:14.5px}
+
 /* hero */
-.hero{position:relative;min-height:min(880px,100vh);display:flex;align-items:flex-end;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.04);animation:zoom 18s ease-out forwards}
-@keyframes zoom{to{transform:scale(1)}}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,14,18,.95) 0%,rgba(15,14,18,.75) 42%,rgba(15,14,18,.25) 75%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
-.hero .in{position:relative;z-index:2;padding:170px 0 70px}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
-.eyebrow:before{content:"";width:38px;height:1px;background:var(--gold)}
-h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(46px,7vw,96px);line-height:.98;letter-spacing:-.01em;margin:22px 0 26px;max-width:820px}
-h1 em{font-style:italic;color:var(--gold2)}
-.lead{font-size:clamp(16px,1.5vw,18.5px);color:#cfc8bd;max-width:560px}
-.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-top:1px solid rgba(239,233,223,.15)}
-.stat{padding:22px 24px 0 0}.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;color:var(--gold2);line-height:1}.stat span{font-size:13.5px;color:var(--mut)}
-section{padding:120px 0}
-.kick{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,4.6vw,62px);line-height:1.02;margin:14px 0 18px}
-h2 em{font-style:italic;color:var(--gold2)}
-.sub{color:var(--mut);font-size:17px;max-width:600px}
-/* cases */
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.ph{position:relative;aspect-ratio:4/5;overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
-.ph .tag{position:absolute;left:24px;bottom:24px;background:rgba(15,14,18,.85);backdrop-filter:blur(8px);border:1px solid var(--line);padding:16px 18px;max-width:280px;font-size:14px}
-.ph .tag b{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold2);font-weight:500}
-.clist{margin-top:34px;border-top:1px solid var(--line)}
-.ci{display:grid;grid-template-columns:60px 1fr;gap:10px;padding:22px 0;border-bottom:1px solid var(--line)}
-.ci .n{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-style:italic}
-.ci h3{font-size:18px;font-weight:700;margin-bottom:4px}.ci p{color:var(--mut);font-size:14.5px}
-/* path */
-.path{background:var(--bg2)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
-.steps:before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--gold),var(--line))}
-.step{padding-right:28px;position:relative}
-.step .dot{width:55px;height:55px;border-radius:50%;border:1px solid var(--gold);background:var(--bg2);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold2);margin-bottom:24px}
-.step h3{font-size:18px;margin-bottom:8px}.step p{color:var(--mut);font-size:14.5px}
-.price{margin-top:70px;display:grid;grid-template-columns:1.2fr 1fr;border:1px solid var(--line)}
-.price .l{padding:44px;background:linear-gradient(135deg,#221e17,#17151b)}
-.price .big{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,7vw,84px);line-height:1;color:var(--gold2)}
-.price .r{padding:44px;display:flex;flex-direction:column;justify-content:center;gap:12px;font-size:15px;color:#d6d0c6}
-.price .r div:before{content:"— ";color:var(--gold)}
-/* quote */
-.quote{position:relative;padding:150px 0;overflow:hidden}
-.quote img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;filter:grayscale(1)}
-.quote blockquote{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.4vw,46px);line-height:1.2;max-width:950px;font-style:italic}
-.quote cite{position:relative;display:block;margin-top:24px;font-style:normal;color:var(--gold);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.hero{position:relative;height:min(100vh,940px);min-height:680px;overflow:hidden;padding:0}
+.hero .bgi{position:absolute;inset:0}
+.hero .bgi img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;transform:scale(1.1);transition:transform 2.4s cubic-bezier(.16,.8,.24,1)}
+.hero.go .bgi img{transform:scale(1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,16,.55) 0%,rgba(14,14,16,.15) 35%,rgba(14,14,16,.92) 82%,var(--bg) 100%),linear-gradient(90deg,rgba(14,14,16,.7),transparent 70%)}
+.hero .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:64px}
+.hero h1{max-width:12ch}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-top:40px}
+.hero .row p{font-size:clamp(16px,1.4vw,19px);color:#cfc9c0;max-width:34em}
+.hero .ctas{display:flex;gap:14px;flex:none}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(241,237,230,.14)}
+.hstats div{padding:24px 24px 0 0}
+.hstats b{display:block;font-size:34px;font-weight:500;letter-spacing:-.03em;color:var(--gold2)}
+.hstats span{font-size:14px;color:var(--mut)}
+
+/* ticker */
+.tick{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0}
+.tick .t{display:flex;gap:56px;width:max-content;animation:tk 40s linear infinite;font-size:clamp(22px,2.4vw,34px);font-weight:400;letter-spacing:-.02em;color:#cfc9c0}
+.tick .t span{display:flex;align-items:center;gap:56px}
+.tick .t span:after{content:"✦";color:var(--gold);font-size:.6em}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* journey sticky */
+.jr{display:grid;grid-template-columns:1fr 1fr;gap:96px}
+.jr .pin{position:sticky;top:120px;height:calc(100vh - 180px);max-height:720px;border-radius:24px;overflow:hidden;background:var(--bg3)}
+.jr .pin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .8s,transform 1.4s cubic-bezier(.16,.8,.24,1)}
+.jr .pin img.on{opacity:1;transform:scale(1)}
+.jr .pin .cnt{position:absolute;left:28px;bottom:24px;z-index:2;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px}
+.jr .steps{padding:8vh 0}
+.jr .head{margin-bottom:12vh}
+.jr .head p{color:var(--mut);margin-top:24px;max-width:28em}
+.st{min-height:62vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);opacity:.28;transition:opacity .6s}
+.st.on{opacity:1}
+.st .n{font-size:14px;letter-spacing:.24em;color:var(--gold)}
+.st h3{font-size:clamp(28px,3vw,44px);font-weight:500;letter-spacing:-.03em;margin:18px 0 16px}
+.st p{color:var(--mut);max-width:28em}
+.st ul{list-style:none;margin-top:22px;display:grid;gap:10px;color:#cfc9c0;font-size:15.5px}
+.st li:before{content:"— ";color:var(--gold)}
+
+/* price band */
+.band{background:linear-gradient(120deg,#1a1712,#121214 60%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .g{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+.band .big{font-size:clamp(72px,11vw,168px);font-weight:300;letter-spacing:-.06em;line-height:.9;color:var(--gold2)}
+.band .big small{font-size:.34em;letter-spacing:-.02em}
+.band ul{list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.band li{display:flex;justify-content:space-between;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);font-size:16px}
+.band li span{color:var(--mut)}
+
+/* travel quotes */
+.far .top{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:72px}
+.far .top p{color:var(--mut);max-width:26em}
+.fq{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.fqi{background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:40px 36px;display:flex;flex-direction:column;gap:28px;transition:border-color .4s,transform .4s}
+.fqi:hover{border-color:#4a4335;transform:translateY(-6px)}
+.fqi .km{font-size:clamp(34px,4vw,64px);font-weight:300;letter-spacing:-.05em;line-height:1;color:var(--gold2)}
+.fqi .km small{font-size:.3em;letter-spacing:0;color:var(--mut);margin-left:8px}
+.fqi q{quotes:none;font-size:17px;color:#d9d3ca;flex:1}
+.fqi cite{font-style:normal;font-size:14px;color:var(--mut)}
+
+/* team */
+.team .top{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:end;margin-bottom:64px}
+.team .top p{color:var(--mut)}
+.tl{border-top:1px solid var(--line)}
+.tr{display:grid;grid-template-columns:72px 1.2fr 1fr 1.4fr;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);transition:background .3s,padding .3s;cursor:pointer}
+.tr:hover{background:var(--bg2);padding-left:16px;padding-right:16px}
+.tr .mono{width:56px;height:56px;border-radius:50%;border:1px solid #4a4335;display:grid;place-items:center;font-size:17px;color:var(--gold2);letter-spacing:.04em}
+.tr b{font-size:20px;font-weight:500;letter-spacing:-.01em}
+.tr span{color:var(--gold);font-size:14.5px}
+.tr q{quotes:none;color:var(--mut);font-size:15px}
+
 /* services */
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
-.s{background:var(--bg);padding:34px;transition:.3s;cursor:pointer}
-.s:hover{background:var(--card)}
-.s .ic{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;color:var(--gold)}
-.s h3{font-size:21px;margin:14px 0 10px}.s p{color:var(--mut);font-size:14.5px}
-.s .go{display:inline-block;margin-top:18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+.sv{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:64px}
+.s{background:var(--bg);padding:36px 32px 32px;min-height:260px;display:flex;flex-direction:column;transition:background .35s;cursor:pointer}
+.s:hover{background:var(--bg2)}
+.s .i{font-size:13px;letter-spacing:.2em;color:var(--gold)}
+.s h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin:auto 0 10px}
+.s p{font-size:14.5px;color:var(--mut)}
+
 /* reviews */
-.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.r{border:1px solid var(--line);padding:32px;background:var(--bg2)}
-.r .st{color:var(--gold);letter-spacing:3px;font-size:13px}
-.r q{display:block;margin:16px 0 22px;font-size:16px;color:#ddd6cb;quotes:none}
-.r .who{font-size:13.5px;color:var(--mut)}
-.score{display:flex;align-items:baseline;gap:14px;margin-top:10px}.score b{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--gold2);font-weight:500}
+.rvw{background:var(--bg2)}
+.rvw .g{display:grid;grid-template-columns:4fr 8fr;gap:72px;align-items:start}
+.sc5{font-size:clamp(110px,12vw,180px);font-weight:300;letter-spacing:-.06em;line-height:.85;color:var(--gold2)}
+.sc5+p{color:var(--mut);margin-top:16px}
+.rl{display:grid;gap:0;border-top:1px solid var(--line)}
+.ri{padding:32px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:32px}
+.ri q{quotes:none;font-size:clamp(18px,1.6vw,22px);line-height:1.45;font-weight:300}
+.ri cite{font-style:normal;font-size:14px;color:var(--mut);white-space:nowrap;text-align:right}
+.ri cite b{display:block;color:var(--tx);font-weight:500}
+
 /* booking */
-.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
-.form{background:var(--card);border:1px solid var(--line);padding:34px}
-.step2{margin-bottom:22px}.step2 label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.bk{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.bk .lead{color:var(--mut);margin-top:24px;max-width:28em}
+.ct{display:grid;gap:26px;margin-top:48px}
+.ct dt{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.ct dd{margin-top:6px;font-size:17px;line-height:1.5}
+.ct dd a:hover{color:var(--gold2)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:3px 24px;font-size:15.5px;color:#cfc9c0}.hours .today{color:var(--gold2);font-weight:600}
+.form{background:var(--bg2);border:1px solid var(--line);border-radius:28px;padding:44px}
+.fs{margin-bottom:30px}
+.fs label{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{padding:10px 14px;border:1px solid var(--line);font-size:14px;font-weight:600;color:#d6d0c6;transition:.15s;border-radius:2px}
-.chip:hover{border-color:var(--gold)}.chip.on{background:var(--gold);border-color:var(--gold);color:#16130e}
-.chip.day{display:flex;flex-direction:column;align-items:center;min-width:64px;line-height:1.25}.chip.day small{font-size:10.5px;text-transform:uppercase;opacity:.7}
+.chip{height:44px;padding:0 18px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14.5px;color:#d9d3ca;transition:.2s}
+.chip:hover{box-shadow:inset 0 0 0 1px #5a5242}
+.chip.on{background:var(--gold);color:#111;box-shadow:none;font-weight:600}
+.chip.day{height:62px;min-width:78px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2}
+.chip.day small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
 .chip:disabled{opacity:.25;text-decoration:line-through;cursor:not-allowed}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-input{width:100%;background:transparent;border:1px solid var(--line);padding:14px;color:var(--tx);font:inherit;font-size:15px;outline:none;border-radius:2px}input:focus{border-color:var(--gold)}
-.form .btn{width:100%;justify-content:center;margin-top:8px;padding:17px}
-.small{font-size:12px;color:var(--mut);margin-top:12px;text-align:center}
-#bk-done{display:none;text-align:center;padding:40px 10px}#bk-done .ok{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--gold2);line-height:1}
-#bk-done h3{font-size:24px;margin:10px 0}#bk-done p{color:var(--mut)}
-.demo{margin-top:18px;font-size:13px;border:1px dashed var(--line);padding:12px;color:var(--mut)}
-.ct{margin-top:40px;display:grid;gap:24px}
-.ct dt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}.ct dd{font-size:17px;margin-top:4px}
-.hours{display:grid;grid-template-columns:auto 1fr;gap:3px 22px;font-size:15px;color:#d6d0c6}.hours .today{color:var(--gold2);font-weight:700}
-footer{border-top:1px solid var(--line);padding:36px 0 60px;color:var(--mut);font-size:13.5px}.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input{width:100%;height:56px;border-radius:14px;border:0;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line);padding:0 18px;font:inherit;font-size:16px;color:var(--tx);outline:none}
+input:focus{box-shadow:inset 0 0 0 1px var(--gold)}
+.form .btn{width:100%;margin-top:6px}
+.note{font-size:12.5px;color:var(--mut);text-align:center;margin-top:14px}
+#bk-done{display:none;text-align:center;padding:36px 0}
+#bk-done .ok{width:84px;height:84px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;margin:0 auto 22px;color:var(--gold2)}
+#bk-done .ok svg{width:34px;height:34px}
+#bk-done h3{font-size:30px;font-weight:500;letter-spacing:-.02em}#bk-done p{color:var(--mut);margin-top:10px}
+.demo{margin-top:22px;font-size:13.5px;color:var(--mut);border:1px dashed var(--line);border-radius:14px;padding:14px}
+
+footer{border-top:1px solid var(--line);padding:48px 0;font-size:14px;color:var(--mut)}
+.ft{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 .mbar{display:none}
-@media(max-width:980px){nav,.tel{display:none}.stats{grid-template-columns:repeat(2,1fr)}.cases,.book,.price{grid-template-columns:1fr}.cases{gap:40px}.steps{grid-template-columns:1fr 1fr;gap:40px 0}.steps:before{display:none}.svc,.rv{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){section{padding:80px 0}.hero .in{padding-top:130px}.svc,.rv,.steps{grid-template-columns:1fr}.price .l,.price .r,.form{padding:24px}.row2{grid-template-columns:1fr}.hdr .hr .btn{padding:11px 16px}
-.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:8px}.mbar a{flex:1;justify-content:center;padding:14px}footer{padding-bottom:110px}.hero:after{background:linear-gradient(0deg,var(--bg) 8%,rgba(15,14,18,.7) 60%,rgba(15,14,18,.55))}}
+
+@media (max-width:1100px){
+  .hdr nav,.hdr .tel{display:none}
+  .hero .row{flex-direction:column;align-items:flex-start}
+  .hstats{grid-template-columns:1fr 1fr}
+  .jr{grid-template-columns:1fr;gap:0}
+  .jr .pin{position:relative;top:0;height:420px;margin-bottom:40px}
+  .st{min-height:auto;padding:40px 0;opacity:1}
+  .jr .head{margin-bottom:48px}.jr .steps{padding:0}
+  .band .g,.team .top,.rvw .g,.bk{grid-template-columns:1fr;gap:48px}
+  .fq{grid-template-columns:1fr}
+  .far .top{flex-direction:column;align-items:flex-start}
+  .tr{grid-template-columns:56px 1fr;row-gap:6px}.tr q{grid-column:2}.tr span{grid-column:2}
+  .sv{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  :root{--sec:88px;--gap:16px}
+  .w{width:calc(100% - 32px)}
+  .rl-txt{display:none}.rs{display:inline}
+  header{top:34px}.hdr{height:68px}.logo{font-size:20px}.hdr .btn{height:42px;padding:0 18px;font-size:13.5px}
+  .hero{min-height:720px}.hero .in{padding-bottom:40px}
+  .hero .ctas{width:100%}.hero .ctas .btn{flex:1;padding:0 16px}
+  .hstats div{padding:18px 12px 0 0}.hstats b{font-size:26px}
+  .jr .pin{height:300px;border-radius:18px}
+  .sv{grid-template-columns:1fr}.s{min-height:180px}
+  .ri{grid-template-columns:1fr;gap:14px}.ri cite{text-align:left}
+  .form{padding:24px;border-radius:20px}.row2{grid-template-columns:1fr}
+  .fqi{padding:32px 24px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:80;gap:8px}.mbar .btn{flex:1;height:54px}
+  footer{padding-bottom:100px}
+}
 </style>
 </head>
 <body>
-<div class="ribbon"><b>Концепт сайта для клиники «Денталюкс+»</b> — подготовлен Pixel Forge на основе открытых данных. Фото иллюстративные, запись демонстрационная.</div>
-<header><div class="w hdr">
+<div class="ribbon"><b>Концепт сайта для клиники «Денталюкс+»</b><span class="rl-txt"> — подготовлен Pixel Forge на основе карточки и отзывов на Яндекс Картах. Фото иллюстративные, запись демонстрационная.</span><span class="rs"> · Pixel Forge</span></div>
+<header id="hdr"><div class="w hdr">
   <a class="logo" href="#top">Денталюкс<b>+</b></a>
-  <nav><a href="#cases">Сложные случаи</a><a href="#path">Имплантация</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#book">Контакты</a></nav>
-  <div class="hr"><a class="tel" href="tel:+79172963545">+7 (917) 296-35-45</a><a class="btn btn-g" href="#book">Записаться</a></div>
+  <nav><a href="#journey">Имплантация</a><a href="#team">Врачи</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a></nav>
+  <div class="side"><a class="tel" href="tel:+79172963545">+7 (917) 296-35-45</a><a class="btn btn-g" href="#book">Консультация</a></div>
 </div></header>
 
 <main id="top">
-<section class="hero" style="padding:0">
-  <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=2000&q=80" alt="">
+<section class="hero" id="hero">
+  <div class="bgi"><img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=2200&q=80" alt=""></div>
   <div class="w in">
-    <span class="eyebrow">Казань · ул. Нариманова, 63</span>
-    <h1>Имплантация, за которую <em>другие не берутся</em></h1>
-    <p class="lead">Костная пластика, All-on-6, восстановление после неудачного лечения. Диагностика на КТ, операция и коронки из собственной лаборатории — весь путь в одной клинике.</p>
-    <div class="cta"><a class="btn btn-g" href="#book">Записаться на консультацию</a><a class="btn btn-l" href="#path">Как проходит лечение</a></div>
-    <div class="stats">
-      <div class="stat"><b>5,0</b><span>190 оценок на Яндекс Картах</span></div>
-      <div class="stat"><b>с 90-х</b><span>пациенты, которые с нами десятилетиями</span></div>
-      <div class="stat"><b>КТ</b><span>и зуботехническая лаборатория на месте</span></div>
-      <div class="stat"><b>300 км</b><span>— столько едут к нам на лечение</span></div>
+    <span class="k rv">Стоматологическая клиника · Казань</span>
+    <h1 class="rv d1" style="margin-top:28px">Имплантация, за которую <em>другие не берутся</em></h1>
+    <div class="row">
+      <p class="rv d2">Костная пластика, All-on-6, сложные удаления и восстановление после неудачного лечения. КТ, операция и коронки из собственной лаборатории — под одной крышей на Нариманова, 63.</p>
+      <div class="ctas rv d3"><a class="btn btn-g" href="#book">Записаться на консультацию</a><a class="btn btn-o" href="#journey">Как проходит лечение</a></div>
+    </div>
+    <div class="hstats">
+      <div class="rv"><b>5,0</b><span>190 оценок на Яндекс Картах</span></div>
+      <div class="rv d1"><b>250 км</b><span>— столько едут к нам пациенты</span></div>
+      <div class="rv d2"><b>КТ</b><span>диагностика в клинике</span></div>
+      <div class="rv d3"><b>80 000 ₽</b><span>имплант OSSTEM + коронка</span></div>
     </div>
   </div>
 </section>
 
-<section id="cases">
-  <div class="w cases">
-    <div class="ph"><img src="https://images.unsplash.com/photo-1771442873035-474765b40ac6?auto=format&fit=crop&w=1100&q=80" alt=""><div class="tag"><b>OSSTEM + коронка</b>имплантация под ключ — 80 000 ₽</div></div>
-    <div>
-      <span class="kick">Наша специализация</span>
-      <h2>Случаи, после которых говорят <em>«рисковали»</em></h2>
-      <p class="sub">К нам приходят, когда в других клиниках предложили съёмный протез или развели руками.</p>
-      <div class="clist">
-        <div class="ci"><span class="n">01</span><div><h3>Костная пластика</h3><p>Наращиваем кость там, где для импланта её не хватает.</p></div></div>
-        <div class="ci"><span class="n">02</span><div><h3>All-on-6</h3><p>Полное восстановление зубного ряда на шести имплантах.</p></div></div>
-        <div class="ci"><span class="n">03</span><div><h3>Сложное удаление и кисты</h3><p>Ретинированные «восьмёрки», кисты — аккуратно и без долгого восстановления.</p></div></div>
-        <div class="ci"><span class="n">04</span><div><h3>Переделка чужих работ</h3><p>Разбираемся с последствиями неудачного лечения и протезирования.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="tick"><div class="t">
+  <span>Костная пластика</span><span>All-on-6</span><span>Синус-лифтинг</span><span>Сложное удаление «восьмёрок»</span><span>Лечение кист</span><span>Цифровое протезирование CAD/CAM</span>
+  <span>Костная пластика</span><span>All-on-6</span><span>Синус-лифтинг</span><span>Сложное удаление «восьмёрок»</span><span>Лечение кист</span><span>Цифровое протезирование CAD/CAM</span>
+</div></div>
 
-<section class="path" id="path">
-  <div class="w">
-    <span class="kick">Путь пациента</span>
-    <h2>Имплантация — <em>шаг за шагом</em></h2>
-    <p class="sub">Заранее понятно, что будет, сколько это займёт и сколько стоит. Без сюрпризов на середине пути.</p>
+<section id="journey">
+  <div class="w jr">
+    <div class="pin" id="pin">
+      <img class="on" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1777445826358-f95518f49b44?auto=format&fit=crop&w=1200&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1771442873035-474765b40ac6?auto=format&fit=crop&w=1200&q=80" alt="">
+      <span class="cnt" id="cnt">01 / 04</span>
+    </div>
     <div class="steps">
-      <div class="step"><div class="dot">I</div><h3>Консультация и КТ</h3><p>Снимок в клинике, осмотр хирурга, ответы на все вопросы.</p></div>
-      <div class="step"><div class="dot">II</div><h3>План и смета</h3><p>Пошаговый план лечения с итоговой стоимостью.</p></div>
-      <div class="step"><div class="dot">III</div><h3>Операция</h3><p>Установка импланта, при необходимости — костная пластика.</p></div>
-      <div class="step"><div class="dot">IV</div><h3>Коронка</h3><p>Изготавливаем в собственной лаборатории — без посредников.</p></div>
-    </div>
-    <div class="price">
-      <div class="l"><span class="kick">Имплантация под ключ</span><div class="big">80 000 ₽</div><p style="color:var(--mut);margin-top:10px">имплантат OSSTEM + коронка</p></div>
-      <div class="r"><div>КТ-диагностика в клинике</div><div>Своя зуботехническая лаборатория</div><div>Цифровое протезирование CAD/CAM</div><div>Хирург-имплантолог с авторскими методиками</div></div>
+      <div class="head"><span class="k rv">Путь пациента</span><h2 class="rv d1">Имплантация <em>шаг за шагом</em></h2><p class="rv d2">Заранее понятно, что будет, сколько это займёт и сколько стоит. Без сюрпризов на середине пути.</p></div>
+      <div class="st on" data-i="0"><span class="n">01</span><h3>Консультация и КТ</h3><p>Снимок прямо в клинике и разговор с хирургом. Врач покажет, что происходит, и ответит на все вопросы.</p><ul><li>Компьютерная томография на месте</li><li>Осмотр хирурга-имплантолога</li></ul></div>
+      <div class="st" data-i="1"><span class="n">02</span><h3>План и смета</h3><p>Пошаговый план лечения с итоговой стоимостью. Даже в сложных случаях — от КТ до последней коронки.</p><ul><li>Подробный план по этапам</li><li>Итоговая стоимость — до начала лечения</li></ul></div>
+      <div class="st" data-i="2"><span class="n">03</span><h3>Операция</h3><p>Установка импланта, а если кости не хватает — костная пластика или синус-лифтинг. Спокойно и без боли.</p><ul><li>Одиночные импланты и All-on-6</li><li>Костная пластика, синус-лифтинг</li></ul></div>
+      <div class="st" data-i="3"><span class="n">04</span><h3>Коронка</h3><p>Изготавливаем в собственной зуботехнической лаборатории — врач контролирует каждый этап.</p><ul><li>Цифровое протезирование CAD/CAM</li><li>Цирконий и металлокерамика</li></ul></div>
     </div>
   </div>
 </section>
 
-<section class="quote">
-  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2000&q=70" alt="">
+<section class="band">
+  <div class="w g">
+    <div class="rv"><span class="k">Имплантация под ключ</span><div class="big" style="margin-top:28px">80 000 <small>₽</small></div></div>
+    <ul class="rv d1">
+      <li>Имплантат<span>OSSTEM</span></li>
+      <li>Коронка<span>из собственной лаборатории</span></li>
+      <li>Диагностика<span>КТ в клинике</span></li>
+      <li>Хирург<span>имплантолог с авторскими методиками</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="far">
   <div class="w">
-    <blockquote>«Я прошла консультации у многих специалистов в течение нескольких месяцев — и только здесь поняла, что нашла свою клинику.»</blockquote>
-    <cite>Ольга О. · имплантация и костная пластика</cite>
+    <div class="top"><div><span class="k rv">География пациентов</span><h2 class="rv d1">К нам <em>приезжают</em></h2></div><p class="rv d2">Ради сложных случаев к нам едут из других городов и приходят после отказов в других клиниках — так пишут в отзывах на Яндекс Картах.</p></div>
+    <div class="fq">
+      <div class="fqi rv"><div class="km">250<small>км</small></div><q>Был сложный случай переднего зуба, а для самооценки это главное. Ездила к нему с 2022 года — не пожалела. Справился на 100%.</q><cite>Гульназ З.</cite></div>
+      <div class="fqi rv d1"><div class="km">«Никто не возьмётся»</div><q>Обратилась со сложным случаем, думала, уже никто не возьмётся. Ильнар Тахирович сказал: сложно, но ничего невозможного нет.</q><cite>Наталья З.</cite></div>
+      <div class="fqi rv d2"><div class="km">Йошкар-Ола</div><q>В клинику Денталюкс я приехала из Йошкар-Олы по совету лечащего врача. Долгое время носила съёмные протезы.</q><cite>Светлана Б.</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team" style="padding-top:0">
+  <div class="w">
+    <div class="top"><div><span class="k rv">Команда</span><h2 class="rv d1">Врачи, которых <em>называют по именам</em></h2></div><p class="rv d2">В отзывах пациенты чаще всего благодарят конкретных врачей. Нажмите на врача, чтобы записаться к нему.</p></div>
+    <div class="tl">
+      <a class="tr rv" href="#book" data-doc="Юнусов И. Т."><span class="mono">ИЮ</span><b>Юнусов Ильнар Тахирович</b><span>хирург-имплантолог</span><q>«Врач-новатор, исследователь, педагог, применяет авторские методики»</q></a>
+      <a class="tr rv" href="#book" data-doc="Сайфутдинов А. В."><span class="mono">АС</span><b>Сайфутдинов Айрат Вакилевич</b><span>хирург-имплантолог</span><q>«Была на имплантации 3 раза — супер хирург с золотыми руками»</q></a>
+      <a class="tr rv" href="#book" data-doc="Шаймарданова К. А."><span class="mono">КШ</span><b>Шаймарданова Камила Азатовна</b><span>хирург</span><q>«Сложное удаление провела незаметно, быстро, безболезненно»</q></a>
+      <a class="tr rv" href="#book" data-doc="Юнусова И. И."><span class="mono">ИЮ</span><b>Юнусова Индира Ильдусовна</b><span>стоматолог-терапевт</span><q>«Пролечила все зубы — пломбы не заметны невооружённым глазом»</q></a>
+      <a class="tr rv" href="#book" data-doc="Серазетдинов Л. И."><span class="mono">ЛС</span><b>Серазетдинов Ленар Ильдарович</b><span>врач-стоматолог</span><q>«Вернул мне улыбку и полноценность вкусовых ощущений»</q></a>
+      <a class="tr rv" href="#book" data-doc="Галимова Г. Г."><span class="mono">ГГ</span><b>Галимова Гузель Гамилевна</b><span>стоматолог-терапевт</span><q>«Брату 7 лет — никакого страха, просился полечить ещё»</q></a>
+    </div>
   </div>
 </section>
 
 <section id="services" style="padding-top:0">
   <div class="w">
-    <span class="kick">Все направления</span>
-    <h2>И не только <em>хирургия</em></h2>
-    <div class="svc">
-      <a href="#book" class="s" data-svc="Имплантация"><span class="ic">I</span><h3>Имплантация</h3><p>Одиночные импланты, All-on-6, синус-лифтинг и костная пластика.</p><span class="go">Записаться →</span></a>
-      <a href="#book" class="s" data-svc="Протезирование"><span class="ic">II</span><h3>Протезирование</h3><p>Коронки из циркония и металлокерамики, виниры — из своей лаборатории.</p><span class="go">Записаться →</span></a>
-      <a href="#book" class="s" data-svc="Хирургия"><span class="ic">III</span><h3>Хирургия</h3><p>Удаление любой сложности, челюстно-лицевая хирургия.</p><span class="go">Записаться →</span></a>
-      <a href="#book" class="s" data-svc="Лечение"><span class="ic">IV</span><h3>Терапия</h3><p>Кариес, каналы, реставрации — пломбы, которых не видно.</p><span class="go">Записаться →</span></a>
-      <a href="#book" class="s" data-svc="Гигиена"><span class="ic">V</span><h3>Гигиена и отбеливание</h3><p>Профгигиена раз в полгода и бережное отбеливание.</p><span class="go">Записаться →</span></a>
-      <a href="#book" class="s" data-svc="Детский приём"><span class="ic">VI</span><h3>Детский приём</h3><p>Дети после приёма сами просятся «полечить ещё какие-нибудь зубы».</p><span class="go">Записаться →</span></a>
+    <span class="k rv">Все направления</span>
+    <h2 class="rv d1">И не только <em>хирургия</em></h2>
+    <div class="sv">
+      <a class="s rv" href="#book" data-svc="Имплантация"><span class="i">01</span><h3>Имплантация</h3><p>Одиночные импланты, All-on-6, костная пластика</p></a>
+      <a class="s rv d1" href="#book" data-svc="Хирургия"><span class="i">02</span><h3>Хирургия</h3><p>Сложное удаление, кисты, челюстно-лицевая хирургия</p></a>
+      <a class="s rv d2" href="#book" data-svc="Протезирование"><span class="i">03</span><h3>Протезирование</h3><p>Коронки, виниры, цифровое протезирование</p></a>
+      <a class="s rv d3" href="#book" data-svc="Лечение"><span class="i">04</span><h3>Терапия</h3><p>Кариес, каналы, художественные реставрации</p></a>
+      <a class="s rv" href="#book" data-svc="Гигиена"><span class="i">05</span><h3>Гигиена</h3><p>Профгигиена и отбеливание</p></a>
+      <a class="s rv d1" href="#book" data-svc="Детский приём"><span class="i">06</span><h3>Детям</h3><p>Спокойное лечение без страха</p></a>
+      <a class="s rv d2" href="#book" data-svc="Консультация"><span class="i">07</span><h3>Ортодонтия</h3><p>Брекеты, элайнеры</p></a>
+      <a class="s rv d3" href="#book" data-svc="Консультация"><span class="i">08</span><h3>КТ-диагностика</h3><p>Компьютерная томография в клинике</p></a>
     </div>
   </div>
 </section>
 
-<section id="reviews" style="background:var(--bg2)">
-  <div class="w">
-    <span class="kick">Отзывы пациентов</span>
-    <div class="score"><b>5,0</b><span style="color:var(--mut)">190 оценок · 96 отзывов на Яндекс Картах</span></div>
-    <div class="rv">
-      <div class="r"><div class="st">★★★★★</div><q>Ездила к нему с 2022 года за 250 км — не пожалела. Справился на 100%.</q><div class="who">Гульназ З.</div></div>
-      <div class="r"><div class="st">★★★★★</div><q>Впервые мне удалили зуб так, что я не успела понять, что произошло. Обстановка как дома.</q><div class="who">Катерина П.</div></div>
-      <div class="r"><div class="st">★★★★★</div><q>Лечу зубы в этой клинике ещё с 90-х годов. И ни разу не пожалел!</q><div class="who">Наиль З.</div></div>
+<section class="rvw" id="reviews">
+  <div class="w g">
+    <div class="rv"><span class="k">Отзывы</span><div class="sc5" style="margin-top:28px">5,0</div><p>190 оценок · 96 отзывов на Яндекс Картах</p><a class="btn btn-o" style="margin-top:32px" href="https://yandex.ru/maps/org/dentalyux_/1112306588/reviews/" target="_blank" rel="noopener">Все отзывы</a></div>
+    <div class="rl">
+      <div class="ri rv"><q>«Я прошла консультации у многих специалистов в течение нескольких месяцев — и только в клинике Денталюкс+ поняла, что нашла свою клинику.»</q><cite><b>Ольга О.</b>имплантация, костная пластика</cite></div>
+      <div class="ri rv d1"><q>«Впервые мне удалили зуб так, что я не успела понять, что произошло. Обстановка как дома.»</q><cite><b>Катерина П.</b>удаление с кистой</cite></div>
+      <div class="ri rv d2"><q>«Лечу зубы в этой клинике ещё с 90-х годов. И ни разу не пожалел!»</q><cite><b>Наиль З.</b>постоянный пациент</cite></div>
     </div>
-    <a href="https://yandex.ru/maps/org/dentalyux_/1112306588/reviews/" target="_blank" rel="noopener" class="btn btn-l" style="margin-top:36px">Все отзывы на Яндекс Картах →</a>
   </div>
 </section>
 
 <section id="book">
-  <div class="w book">
+  <div class="w bk">
     <div>
-      <span class="kick">Онлайн-запись</span>
-      <h2>Запишитесь, <em>даже если вы из другого города</em></h2>
-      <p class="sub">Выберите услугу и время — администратор подтвердит запись. Едете издалека? Напишите об этом, подберём время с учётом дороги.</p>
+      <span class="k rv">Онлайн-запись</span>
+      <h2 class="rv d1">Запишитесь, <em>даже из другого города</em></h2>
+      <p class="lead rv d2">Выберите услугу, врача и время — администратор подтвердит запись. Едете издалека? Напишите об этом в заявке, подберём время с учётом дороги.</p>
       <dl class="ct">
-        <div><dt>Адрес</dt><dd>Казань, ул. Нариманова, 63 · 200 м от ост. «Улица Татарстан»</dd></div>
-        <div><dt>Телефон и WhatsApp</dt><dd><a href="tel:+79172963545">+7 (917) 296-35-45</a> · <a class="gold" href="https://wa.me/79172963545">написать</a></dd></div>
-        <div><dt>Часы работы</dt><dd class="hours" id="hours"></dd></div>
+        <div class="rv"><dt>Адрес</dt><dd>Казань, ул. Нариманова, 63<br>200 м от остановки «Улица Татарстан»</dd></div>
+        <div class="rv d1"><dt>Телефон и WhatsApp</dt><dd><a href="tel:+79172963545">+7 (917) 296-35-45</a> · <a href="https://wa.me/79172963545" style="color:var(--gold2)">написать</a></dd></div>
+        <div class="rv d2"><dt>Часы работы</dt><dd class="hours" id="hours"></dd></div>
       </dl>
     </div>
-    <div class="form">
+    <div class="form rv d1">
       <div id="bk-form">
-        <div class="step2"><label>Услуга</label><div class="chips" id="bk-svc"></div></div>
-        <div class="step2"><label>День</label><div class="chips" id="bk-days"></div></div>
-        <div class="step2"><label>Время</label><div class="chips" id="bk-times"></div></div>
-        <div class="step2"><label>Контакты</label><div class="row2"><input id="bk-nm" placeholder="Ваше имя"><input id="bk-ph" placeholder="+7 (___) ___-__-__" inputmode="tel"></div></div>
+        <div class="fs"><label>Услуга</label><div class="chips" id="bk-svc"></div></div>
+        <div class="fs"><label>Врач</label><div class="chips" id="bk-doc"></div></div>
+        <div class="fs"><label>День</label><div class="chips" id="bk-days"></div></div>
+        <div class="fs"><label>Время</label><div class="chips" id="bk-times"></div></div>
+        <div class="fs"><label>Контакты</label><div class="row2"><input id="bk-nm" placeholder="Ваше имя" autocomplete="name"><input id="bk-ph" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel"></div></div>
         <button class="btn btn-g" id="bk-send">Записаться</button>
-        <p class="small">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+        <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
       </div>
-      <div id="bk-done"><div class="ok">✓</div><h3>Заявка принята</h3><p id="bk-sum"></p><div class="demo">Это демонстрация. В рабочей версии заявка сразу приходит администратору в WhatsApp или на почту.</div><button class="btn btn-l" id="bk-again" style="margin-top:18px">Записаться ещё</button></div>
+      <div id="bk-done"><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div><h3>Заявка принята</h3><p id="bk-sum"></p><div class="demo">Это демонстрация. В рабочей версии заявка сразу приходит администратору в WhatsApp или на почту.</div><button class="btn btn-o" id="bk-again" style="margin-top:22px">Записаться ещё</button></div>
     </div>
   </div>
 </section>
 </main>
-<footer><div class="w ft"><span>© 2026 Стоматологическая клиника «Денталюкс+», Казань</span><span>Концепт сайта — Pixel Forge · t.me/pixelforgeweb</span></div></footer>
-<div class="mbar"><a class="btn btn-l" style="background:var(--bg)" href="tel:+79172963545">Позвонить</a><a class="btn btn-g" href="#book">Записаться</a></div>
+<footer><div class="w ft"><span class="logo">Денталюкс<b>+</b></span><span>Казань, ул. Нариманова, 63 · © 2026</span><span>Концепт сайта — Pixel Forge · t.me/pixelforgeweb</span></div></footer>
+<div class="mbar"><a class="btn btn-o" style="background:var(--bg)" href="tel:+79172963545">Позвонить</a><a class="btn btn-g" href="#book">Записаться</a></div>
+
+<script>window.PF_DOCS=['Любой врач','Юнусов И. Т.','Сайфутдинов А. В.','Шаймарданова К. А.','Юнусова И. И.','Галимова Г. Г.'];</script>
 <script>(function(){
 const SV=["Консультация", "Имплантация", "All-on-6", "Хирургия", "Протезирование", "Лечение", "Гигиена", "Детский приём"];
 const HRS={1: [9, 20], 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 14], 0: null};
 const DN=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
 const DFULL=['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
 const MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
-const st={svc:SV[0],day:null,time:null};
+const DOCS=window.PF_DOCS||null;
+const st={svc:SV[0],doc:DOCS?DOCS[0]:null,day:null,time:null};
 const $=id=>document.getElementById(id);
 if(!$('bk-svc'))return;
 function chip(p,label,on,fn,cls,dis){const b=document.createElement('button');b.type='button';b.className='chip '+(cls||'')+(on?' on':'');b.innerHTML=label;b.disabled=!!dis;b.onclick=fn;p.appendChild(b)}
 function days(){const out=[],n=new Date(),d=new Date();d.setHours(0,0,0,0);const h=HRS[n.getDay()];if(!h||n.getHours()+n.getMinutes()/60>=h[1]-1)d.setDate(d.getDate()+1);while(out.length<6){if(HRS[d.getDay()])out.push(new Date(d));d.setDate(d.getDate()+1)}return out}
 function busy(k,h,m){let x=7;for(const c of k+h+':'+m)x=(x*31+c.charCodeAt(0))%101;return x%3===0}
 function rSvc(){const p=$('bk-svc');p.innerHTML='';SV.forEach(s=>chip(p,s,st.svc===s,()=>{st.svc=s;rSvc()}))}
+function rDoc(){const p=$('bk-doc');if(!p||!DOCS)return;p.innerHTML='';DOCS.forEach(d=>chip(p,d,st.doc===d,()=>{st.doc=d;rDoc()}))}
+window.pfPickDoc=function(v){if(DOCS&&DOCS.includes(v)){st.doc=v;rDoc()}};
 function rDays(){const p=$('bk-days');p.innerHTML='';const today=new Date().toDateString();days().forEach((d,i)=>{const k=d.toDateString();if(!st.day)st.day=k;chip(p,'<small>'+(k===today?'сегодня':DN[d.getDay()])+'</small>'+d.getDate()+' '+MON[d.getMonth()],st.day===k,()=>{st.day=k;st.time=null;rDays();rTimes()},'day')})}
 function rTimes(){const p=$('bk-times');p.innerHTML='';const d=new Date(st.day),hr=HRS[d.getDay()],now=new Date();for(let h=hr[0];h<hr[1];h++)for(const m of [0,30]){const t=new Date(d);t.setHours(h,m);const l=h+':'+(m?'30':'00');chip(p,l,st.time===l,()=>{st.time=l;rTimes()},'',t<=now||busy(st.day,h,m))}}
 window.pfPickService=function(v){if(SV.includes(v)){st.svc=v;rSvc()}};
 $('bk-ph').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);let o='+7';if(v.length>1)o+=' ('+v.slice(1,4);if(v.length>=4)o+=') '+v.slice(4,7);if(v.length>=7)o+='-'+v.slice(7,9);if(v.length>=9)o+='-'+v.slice(9,11);e.target.value=o});
-$('bk-send').onclick=()=>{const nm=$('bk-nm').value.trim(),ph=$('bk-ph').value.replace(/\D/g,'');if(!st.time){$('bk-times').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'none'}],{duration:300});return}if(!nm){$('bk-nm').focus();return}if(ph.length<11){$('bk-ph').focus();return}const d=new Date(st.day);$('bk-sum').textContent=nm+', вы записаны: '+st.svc.toLowerCase()+', '+DFULL[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+', '+st.time+'.';$('bk-form').style.display='none';$('bk-done').style.display='block'};
+$('bk-send').onclick=()=>{const nm=$('bk-nm').value.trim(),ph=$('bk-ph').value.replace(/\D/g,'');if(!st.time){$('bk-times').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'none'}],{duration:300});return}if(!nm){$('bk-nm').focus();return}if(ph.length<11){$('bk-ph').focus();return}const d=new Date(st.day);$('bk-sum').textContent=nm+', вы записаны: '+st.svc.toLowerCase()+', '+DFULL[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+', '+st.time+(st.doc&&st.doc!=='Любой врач'?', врач: '+st.doc:'');if(!/\.$/.test($('bk-sum').textContent))$('bk-sum').textContent+='.';$('bk-form').style.display='none';$('bk-done').style.display='block'};
 $('bk-again').onclick=()=>{$('bk-form').style.display='';$('bk-done').style.display='none';st.time=null;rTimes()};
 document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>pfPickService(a.dataset.svc)));
+document.querySelectorAll('[data-doc]').forEach(a=>a.addEventListener('click',()=>pfPickDoc(a.dataset.doc)));
 const hp=$('hours');if(hp){const td=new Date().getDay();[1,2,3,4,5,6,0].forEach(i=>{const a=document.createElement('span'),b=document.createElement('span');a.textContent=DFULL[i][0].toUpperCase()+DFULL[i].slice(1);b.textContent=HRS[i]?String(HRS[i][0]).padStart(2,'0')+':00 – '+HRS[i][1]+':00':'выходной';if(i===td)a.className=b.className='today';hp.append(a,b)})}
-rSvc();rDays();rTimes();
+rSvc();rDoc();rDays();rTimes();
+})();
+</script>
+<script>
+(function(){
+  const h=document.getElementById('hdr');const onS=()=>h.classList.toggle('sc',scrollY>20);addEventListener('scroll',onS,{passive:true});onS();
+  requestAnimationFrame(()=>document.getElementById('hero').classList.add('go'));
+  function chk(){document.querySelectorAll('.rv:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.94)e.classList.add('in')})}
+  chk();addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);addEventListener('load',chk);setTimeout(chk,300);
+  // sticky journey
+  const sts=[...document.querySelectorAll('.st')],imgs=[...document.querySelectorAll('#pin img')],cnt=document.getElementById('cnt');let cur=0;
+  function jr(){let best=0,bd=1e9;sts.forEach((s,i)=>{const r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-innerHeight/2);if(d<bd){bd=d;best=i}});
+    if(best!==cur){sts[cur].classList.remove('on');imgs[cur].classList.remove('on');cur=best;sts[cur].classList.add('on');imgs[cur].classList.add('on');cnt.textContent='0'+(cur+1)+' / 04'}}
+  addEventListener('scroll',jr,{passive:true});jr();
 })();
 </script>
 </body>
