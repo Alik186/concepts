@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дента Люкс — стоматология в Омске (концепт сайта)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#3a1f33; --ink2:#73606d; --mint:#f8eff2; --mint2:#f1dde4; --paper:#fffcfd;
+  --teal:#a4436b; --teal2:#86335a; --coral:#a4436b; --coral2:#86335a; --line:#f0e1e7;
+  --r:22px; --shadow:0 18px 50px -20px rgba(58,31,51,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+em.f{font-family:Fraunces,serif;font-style:italic;font-weight:500;color:var(--teal)}
+
+/* concept ribbon */
+.ribbon{background:var(--ink);color:#d8efe8;font-size:13px;text-align:center;padding:9px 16px}
+.ribbon b{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,253,252,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}
+nav{display:flex;gap:24px;font-weight:600;font-size:15px;color:var(--ink2);margin-left:12px}
+nav a:hover{color:var(--teal)}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:18px}
+.tel{font-weight:700;white-space:nowrap}
+.tel small{display:block;font-weight:500;font-size:12px;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s}
+.btn-c{background:var(--coral);color:#fff;box-shadow:0 10px 24px -10px var(--coral)}
+.btn-c:hover{background:var(--coral2);transform:translateY(-1px)}
+.btn-o{border:1.5px solid var(--ink);}
+.btn-o:hover{background:var(--ink);color:#fff}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% -10%,var(--mint2),transparent 60%),var(--mint)}
+.hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 88px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 14px 8px 10px;border-radius:999px;font-size:14px;font-weight:600}
+.stars{color:#f5b300;letter-spacing:1px}
+h1{font-size:clamp(38px,5.2vw,64px);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin:22px 0 20px}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink2);max-width:540px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-note{margin-top:14px;font-size:14px;color:var(--ink2)}
+.hero-art{position:relative;height:460px}
+.blob{position:absolute;inset:20px 0 0 30px;border-radius:44% 56% 52% 48%/48% 42% 58% 52%;background:linear-gradient(150deg,#c46a8f,#7a2f55);box-shadow:var(--shadow)}
+.blob svg{position:absolute;left:50%;top:50%;width:62%;transform:translate(-50%,-52%);opacity:.95}
+.card{position:absolute;background:#fff;border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);font-size:14px;animation:float 6s ease-in-out infinite}
+.card b{display:block;font-size:15px}
+.card .ok{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#f8e1ea;color:var(--teal);font-weight:800;margin-right:10px;vertical-align:middle}
+.c1{left:-6px;top:28px}
+.c2{right:-10px;bottom:18px;max-width:300px;animation-delay:-2s}
+.c3{left:-18px;bottom:120px;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:-34px;position:relative;z-index:2}
+.fact{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;font-size:14px;color:var(--ink2);box-shadow:0 10px 30px -22px rgba(58,31,51,.4)}
+.fact b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+
+section{padding:96px 0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+h2{font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:10px 0 14px}
+.sub{color:var(--ink2);max-width:620px;font-size:17px}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.s{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:.25s;cursor:pointer}
+.s:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.s .ic{width:46px;height:46px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:22px}
+.s h3{font-size:18px;letter-spacing:-.01em}
+.s p{font-size:14px;color:var(--ink2);flex:1}
+.s span{font-size:14px;font-weight:700;color:var(--teal)}
+
+/* booking */
+.book{background:var(--ink);color:#f6ebef;border-radius:36px;padding:56px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
+.book h2{color:#fff}
+.book .sub{color:#d9bfcc}
+.pain{margin-top:26px;display:grid;gap:12px}
+.pain div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#ecd7e0}
+.pain i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:13px}
+.form{background:#fff;color:var(--ink);border-radius:26px;padding:28px}
+.step{margin-bottom:20px}
+.step label{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:9px 14px;border-radius:12px;border:1.5px solid var(--line);font-weight:600;font-size:14px;transition:.15s;background:#fff}
+.chip:hover{border-color:var(--teal)}
+.chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.chip.day{display:flex;flex-direction:column;align-items:center;min-width:62px;line-height:1.2}
+.chip.day small{font-size:11px;font-weight:600;opacity:.75;text-transform:uppercase}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input{width:100%;font:inherit;font-size:15px;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);outline:none;color:var(--ink)}
+input:focus{border-color:var(--teal)}
+.form .btn{width:100%;margin-top:6px;padding:16px}
+.small{font-size:12px;color:var(--ink2);margin-top:10px;text-align:center}
+.done{display:none;text-align:center;padding:30px 10px}
+.done .big{width:72px;height:72px;border-radius:50%;background:#f8e1ea;color:var(--teal);display:grid;place-items:center;font-size:34px;margin:0 auto 16px;font-weight:800}
+.done h3{font-size:24px;margin-bottom:8px}
+.done p{color:var(--ink2)}
+.demo{margin-top:16px;font-size:13px;background:var(--mint);border-radius:12px;padding:12px}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.w{padding:26px;border-radius:var(--r);background:var(--mint)}
+.w .n{font-family:Fraunces,serif;font-style:italic;font-size:40px;color:var(--teal);line-height:1}
+.w h3{font-size:18px;margin:14px 0 8px}
+.w p{font-size:14px;color:var(--ink2)}
+
+/* reviews */
+.rv-top{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 22px}
+.score .big{font-size:44px;font-weight:800;letter-spacing:-.03em}
+.score small{display:block;color:var(--ink2);font-size:13px}
+.rv{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.r{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px}
+.r q{font-size:16px;line-height:1.5;quotes:none}
+.r .who{margin-top:auto;font-size:14px;color:var(--ink2);display:flex;align-items:center;gap:10px}
+.av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;font-size:14px}
+.more{display:inline-block;margin-top:24px;font-weight:700;color:var(--teal);border-bottom:1.5px solid currentColor}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:20px}
+.ct-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px}
+.ct-card dl{display:grid;gap:22px;margin-top:22px}
+.ct-card dt{font-size:13px;font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.ct-card dd{font-size:18px;font-weight:600;margin-top:4px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:16px}
+.hours .today{color:var(--teal);font-weight:800}
+.map{position:relative;border-radius:28px;overflow:hidden;min-height:380px;background:#f3e6eb}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);text-align:center}
+.pin .dot{width:54px;height:54px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--coral);display:grid;place-items:center;margin:0 auto;box-shadow:0 12px 24px -8px var(--coral)}
+.pin .dot span{transform:rotate(45deg);color:#fff;font-weight:800}
+.pin .lbl{margin-top:10px;background:#fff;padding:8px 12px;border-radius:12px;font-weight:700;font-size:14px;box-shadow:var(--shadow);white-space:nowrap}
+.map .btn{position:absolute;left:24px;bottom:24px}
+
+footer{padding:40px 0 60px;color:var(--ink2);font-size:14px;border-top:1px solid var(--line)}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* mobile sticky call */
+.mbar{display:none}
+
+@media (max-width:1020px){
+  nav{display:none}
+  .hero-in{grid-template-columns:1fr;padding:48px 0 70px}
+  .hero-art{height:360px;max-width:460px;width:100%;margin:0 auto}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .svc,.why,.rv{grid-template-columns:repeat(2,1fr)}
+  .book{grid-template-columns:1fr;padding:36px 24px}
+  .ct{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .tel{display:none}
+  .hdr-right .btn{padding:11px 16px;font-size:14px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .svc,.why,.rv{grid-template-columns:1fr}
+  section{padding:70px 0}
+  .book{border-radius:26px}
+  .form{padding:20px}
+  .row2{grid-template-columns:1fr}
+  .hero-art{height:300px}.c2{display:none}.c1{left:0;top:6px}.c3{left:0;bottom:16px}
+  .svc{grid-template-columns:1fr 1fr;gap:10px}.s{padding:16px}.s p{display:none}.s h3{font-size:15px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}
+  .mbar a{flex:1;padding:14px}
+  footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon"><b>Концепт сайта для клиники «Дента Люкс»</b> — подготовлен Pixel Forge на основе открытых данных из Яндекс Карт. Запись на странице демонстрационная.</div>
+
+<header>
+  <div class="wrap hdr">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="12" fill="#a4436b"/><path d="M13 12.5c2.2-1.4 4.6-.6 7 .6 2.4-1.2 4.8-2 7-.6 2.6 1.7 2.6 5.6 1.6 8.6-.8 2.4-1.2 5.3-1.8 7.6-.4 1.6-2.4 1.8-2.9.2L22.6 25c-.5-1.6-2.7-1.6-3.2 0l-1.3 3.9c-.5 1.6-2.5 1.4-2.9-.2-.6-2.3-1-5.2-1.8-7.6-1-3-1-6.9 1.6-8.6Z" fill="#fff"/></svg>
+      Дента Люкс
+    </a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#book">Запись</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="tel" href="tel:+79139880555">+7 (913) 988-05-55<small>Пн–Пт 9–19, Сб 10–14</small></a>
+      <a href="#book" class="btn btn-c">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap hero-in">
+    <div>
+      <span class="badge"><span class="stars">★★★★☆</span> 4,6 · 83 оценки на Яндекс Картах</span>
+      <h1>Улыбки Омска доверяют нам <em class="f">уже&nbsp;28&nbsp;лет</em></h1>
+      <p class="lead">Салон косметической стоматологии у Краеведческого музея: терапия, ортодонтия, протезирование из своей лаборатории, имплантация и косметология. Цены — открыто, запись — онлайн с подтверждением.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-c">Записаться онлайн</a>
+        <a href="tel:+79139880555" class="btn btn-o">Позвонить</a>
+      </div>
+      <p class="hero-note">Первичная консультация стоматолога — 500 ₽</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob">
+        <svg viewBox="0 0 200 200" fill="none"><path d="M58 40c12-8 26-4 42 3 16-7 30-11 42-3 16 11 15 34 9 52-5 14-7 31-11 45-3 10-15 11-18 1l-8-24c-3-10-16-10-19 0l-8 24c-3 10-15 9-18-1-4-14-6-31-11-45-6-18-7-41 10-52Z" fill="#fff" fill-opacity=".95"/><path d="M78 62c6-3 13-2 20 2" stroke="#f2cbd9" stroke-width="7" stroke-linecap="round"/></svg>
+      </div>
+      <div class="card c1"><span class="ok">✓</span><span style="display:inline-block;vertical-align:middle"><b>Запись подтверждена</b>Чт, 15:00 · ортодонт</span></div>
+      <div class="card c2"><b>«Пользуемся услугами клиники больше двадцати лет!»</b><span style="color:var(--ink2)">— из отзыва пациентки</span></div>
+      <div class="card c3"><b>🦷 Своя лаборатория</b><span style="color:var(--ink2)">Коронки — без посредников</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap facts">
+  <div class="fact"><b>28 лет</b>работаем в Омске</div>
+  <div class="fact"><b>500 ₽</b>первичный приём</div>
+  <div class="fact"><b>Лаборатория</b>зуботехническая</div>
+  <div class="fact"><b>Рентген</b>диагностика на месте</div>
+  <div class="fact"><b>Детский</b>кабинет</div>
+  <div class="fact"><b>Косметолог</b>в клинике</div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">Услуги</span>
+    <h2>Услуги и <em class="f">честные цены</em></h2>
+    <p class="sub">Цены из прайса клиники — прямо на странице. Точную стоимость лечения врач назовёт после осмотра.</p>
+    <div class="svc">
+      <a href="#book" class="s" data-svc="Консультация"><div class="ic">💬</div><h3>Консультация</h3><p>Первичный осмотр стоматолога и план лечения.</p><span>500 ₽</span></a>
+      <a href="#book" class="s" data-svc="Лечение кариеса"><div class="ic">🦷</div><h3>Терапия</h3><p>Лечение кариеса и каналов, пломбы из светоотверждаемых материалов.</p><span>от 2 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Брекеты"><div class="ic">😁</div><h3>Ортодонтия</h3><p>Брекет-системы, съёмные и несъёмные аппараты — для детей и взрослых.</p><span>от 30 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Протезирование"><div class="ic">👑</div><h3>Протезирование</h3><p>Металлокерамика, цельнолитые коронки — из собственной зуботехнической лаборатории.</p><span>от 9 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Имплантация"><div class="ic">🔩</div><h3>Имплантация</h3><p>Внутрикостная имплантация, синус-лифтинг, протезирование на имплантах.</p><span>от 28 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Удаление"><div class="ic">🩺</div><h3>Хирургия</h3><p>Удаление постоянных и молочных зубов, хирургическая подготовка к протезированию.</p><span>от 2 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Гигиена"><div class="ic">✨</div><h3>Гигиена и отбеливание</h3><p>AirFlow, ультразвуковая чистка, профессиональное отбеливание.</p><span>от 4 000 ₽</span></a>
+      <a href="#book" class="s" data-svc="Косметология"><div class="ic">🌸</div><h3>Косметология</h3><p>Салон косметической стоматологии — с кабинетом косметолога.</p><span>от 700 ₽</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="wrap book">
+    <div>
+      <span class="kicker" style="color:#f2b8cf">Онлайн-запись</span>
+      <h2>Запись, которая <em class="f" style="color:#f2b8cf">не потеряется</em></h2>
+      <p class="sub">Выберите услугу, день и время. Заявка сразу попадает в журнал записи, а вы получаете подтверждение — без звонков и ожидания ответа в мессенджере.</p>
+      <div class="pain">
+        <div><i>1</i>Работает круглосуточно — даже когда клиника закрыта</div>
+        <div><i>2</i>Видно свободное время у нужного врача</div>
+        <div><i>3</i>Напоминание о приёме накануне</div>
+      </div>
+    </div>
+    <div class="form" id="form">
+      <div id="fwrap">
+        <div class="step"><label>1. Услуга</label><div class="chips" id="svc"></div></div>
+        <div class="step"><label>2. День</label><div class="chips" id="days"></div></div>
+        <div class="step"><label>3. Время</label><div class="chips" id="times"></div></div>
+        <div class="step"><label>4. Контакты</label>
+          <div class="row2"><input id="nm" placeholder="Ваше имя" autocomplete="name"><input id="ph" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel"></div>
+        </div>
+        <button class="btn btn-c" id="send">Записаться</button>
+        <p class="small">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+      </div>
+      <div class="done" id="done">
+        <div class="big">✓</div>
+        <h3>Заявка принята!</h3>
+        <p id="sum"></p>
+        <div class="demo">Это демонстрация. В рабочей версии заявка мгновенно приходит администратору в Telegram или на почту, а пациенту — подтверждение.</div>
+        <button class="btn btn-o" style="margin-top:16px" id="again">Записаться ещё</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Почему выбирают нас</span>
+    <h2>Почему к нам <em class="f">возвращаются</em></h2>
+    <div class="why">
+      <div class="w"><div class="n">01</div><h3>28 лет опыта</h3><p>Многие пациенты ходят к своему врачу больше 20 лет — и приводят всю семью.</p></div>
+      <div class="w"><div class="n">02</div><h3>Открытые цены</h3><p>Стоимость основных услуг — на сайте. Никаких сюрпризов на ресепшене.</p></div>
+      <div class="w"><div class="n">03</div><h3>Всё в одном месте</h3><p>Терапевты, ортопеды, хирург, ортодонт, зубной техник и косметолог — в одной клинике.</p></div>
+      <div class="w"><div class="n">04</div><h3>В центре города</h3><p>Ильинская, 17 — в двух шагах от Краеведческого музея.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--mint)">
+  <div class="wrap">
+    <div class="rv-top">
+      <div><span class="kicker">Отзывы</span><h2>Что говорят <em class="f">пациенты</em></h2></div>
+      <div class="score"><div class="big">4,6</div><div><span class="stars">★★★★☆</span><small>83 оценки · 23 отзыва<br>на Яндекс Картах</small></div></div>
+    </div>
+    <div class="rv">
+      <div class="r"><q>Пользуемся услугами этой клиники больше двадцати лет! Всей семьёй только сюда.</q><div class="who"><span class="av" style="background:#a4436b">О</span>Ольга</div></div>
+      <div class="r"><q>Хорошая чистая клиника, администратор приветливый, цены доступные. На приёме было комфортно и не страшно.</q><div class="who"><span class="av" style="background:#3a1f33">М</span>Максим З.</div></div>
+      <div class="r"><q>Хорошая стоматология. Уютная обстановка, вежливый персонал. Приемлемые цены. Советую всем.</q><div class="who"><span class="av" style="background:#c47a4f">Н</span>Наталья П.</div></div>
+      <div class="r"><q>Лечимся более 20 лет. Всё прекрасно.</q><div class="who"><span class="av" style="background:#6f7fa6">А</span>Александр Ш.</div></div>
+    </div>
+    <a class="more" href="https://yandex.ru/maps/org/denta_lyuks/1023816186/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <span class="kicker">Контакты</span>
+    <h2>Ждём вас <em class="f">на Ильинской</em></h2>
+    <div class="ct" style="margin-top:32px">
+      <div class="ct-card">
+        <dl>
+          <div><dt>Адрес</dt><dd>Омск, Ильинская ул., 17, 1 этаж<br><small style="color:var(--ink2);font-weight:500">рядом с Краеведческим музеем</small></dd></div>
+          <div><dt>Телефон</dt><dd><a href="tel:+79139880555">+7 (913) 988-05-55</a> · <a href="https://wa.me/79139880555">WhatsApp</a><br><a href="tel:+73812302735">+7 (3812) 30-27-35</a></dd></div>
+          <div><dt>Часы работы</dt><dd class="hours" id="hours"></dd></div>
+        </dl>
+      </div>
+      <div class="map" aria-label="Схема проезда">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="400" fill="#f3e6eb"/>
+          <g fill="#ead6de"><rect x="20" y="20" width="150" height="110" rx="10"/><rect x="200" y="20" width="170" height="110" rx="10"/><rect x="400" y="20" width="180" height="110" rx="10"/><rect x="20" y="170" width="150" height="90" rx="10"/><rect x="400" y="170" width="180" height="90" rx="10"/><rect x="20" y="300" width="150" height="80" rx="10"/><rect x="200" y="300" width="170" height="80" rx="10"/><rect x="400" y="300" width="180" height="80" rx="10"/></g>
+          <rect x="200" y="170" width="170" height="90" rx="10" fill="#e2c3d0"/>
+          <path d="M0 150H600M0 280H600M185 0V400M385 0V400" stroke="#fff" stroke-width="18"/>
+          <path d="M0 150H600" stroke="#fff" stroke-width="28"/>
+          <text x="440" y="143" fill="#b18a9b" font-family="Manrope" font-size="13" font-weight="700">Ильинская ул.</text>
+        </svg>
+        <div class="pin"><div class="dot"><span>Д</span></div><div class="lbl">Дента Люкс · Ильинская, 17</div></div>
+        <a class="btn btn-c" href="https://yandex.ru/maps/org/denta_lyuks/1023816186/" target="_blank" rel="noopener">Построить маршрут</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <span>© 2026 Салон косметической стоматологии «Дента Люкс», Омск</span>
+    <span>Концепт сайта — Pixel Forge · t.me/pixelforgeweb</span>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+79139880555" class="btn btn-o" style="background:#fff">Позвонить</a><a href="#book" class="btn btn-c">Записаться</a></div>
+
+<script>
+const SV=['Консультация','Лечение кариеса','Брекеты','Протезирование','Имплантация','Удаление','Гигиена','Косметология'];
+const HRS={1:[9,19],2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[10,14],0:null};
+const DN=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+const DFULL=['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+const MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+let st={svc:'Консультация',day:null,time:null};
+const $=id=>document.getElementById(id);
+
+function chip(parent,label,on,click,cls='',dis=false){
+  const b=document.createElement('button');b.type='button';b.className='chip '+cls+(on?' on':'');b.innerHTML=label;b.disabled=dis;b.onclick=click;parent.appendChild(b);return b;
+}
+function renderSvc(){const p=$('svc');p.innerHTML='';SV.forEach(s=>chip(p,s,st.svc===s,()=>{st.svc=s;renderSvc()}))}
+function days(){const out=[];const n=new Date();const d=new Date();d.setHours(0,0,0,0);const h=HRS[n.getDay()];if(h&&n.getHours()+n.getMinutes()/60>=h[1]-1)d.setDate(d.getDate()+1);while(out.length<6){if(HRS[d.getDay()])out.push(new Date(d));d.setDate(d.getDate()+1)}return out}
+function renderDays(){const p=$('days');p.innerHTML='';days().forEach((d,i)=>{const k=d.toDateString();if(!st.day&&i===0)st.day=k;chip(p,`<small>${i===0&&d.toDateString()===new Date().toDateString()?'сегодня':DN[d.getDay()]}</small>${d.getDate()} ${MON[d.getMonth()]}`,st.day===k,()=>{st.day=k;st.time=null;renderDays();renderTimes()},'day')})}
+function busy(k,h,m){let x=0;for(const c of k+h+m)x=(x*31+c.charCodeAt(0))%97;return x%3===0}
+function renderTimes(){const p=$('times');p.innerHTML='';const d=new Date(st.day);const [a,b]=HRS[d.getDay()];const now=new Date();
+  for(let h=a;h<b;h++)for(const m of [0,30]){const t=new Date(d);t.setHours(h,m);const past=t<=now;const lbl=`${h}:${m?'30':'00'}`;const dis=past||busy(st.day,h,m);
+    chip(p,lbl,st.time===lbl,()=>{st.time=lbl;renderTimes()},'',dis)}
+}
+function renderHours(){const p=$('hours');const td=new Date().getDay();[1,2,3,4,5,6,0].forEach(i=>{const a=document.createElement('span'),b=document.createElement('span');a.textContent=DFULL[i];b.textContent=HRS[i]?`${String(HRS[i][0]).padStart(2,'0')}:00–${HRS[i][1]}:00`:'выходной';if(i===td){a.className=b.className='today'}p.append(a,b)})}
+$('ph').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);let o='+7';if(v.length>1)o+=' ('+v.slice(1,4);if(v.length>=4)o+=') '+v.slice(4,7);if(v.length>=7)o+='-'+v.slice(7,9);if(v.length>=9)o+='-'+v.slice(9,11);e.target.value=o});
+$('send').onclick=()=>{const nm=$('nm').value.trim(),ph=$('ph').value.replace(/\D/g,'');
+  if(!st.time){$('times').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'none'}],{duration:300});return}
+  if(!nm){$('nm').focus();return} if(ph.length<11){$('ph').focus();return}
+  const d=new Date(st.day);$('sum').textContent=`${nm}, вы записаны: ${st.svc.toLowerCase()}, ${DFULL[d.getDay()].toLowerCase()} ${d.getDate()} ${MON[d.getMonth()]}, ${st.time}. Администратор свяжется с вами для подтверждения.`;
+  $('fwrap').style.display='none';$('done').style.display='block'};
+$('again').onclick=()=>{$('fwrap').style.display='block';$('done').style.display='none';st.time=null;renderTimes()};
+document.querySelectorAll('.s[data-svc]').forEach(a=>a.addEventListener('click',()=>{const v=a.dataset.svc;st.svc=SV.includes(v)?v:'Консультация';renderSvc()}));
+renderSvc();renderDays();renderTimes();renderHours();
+</script>
+</body>
+</html>
