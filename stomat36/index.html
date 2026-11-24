@@ -65,7 +65,7 @@ header.sc{border-color:var(--line)}
 .hero-ph .card img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:center 20%;transform:none}
 .hero-ph .card b{display:block;font-size:15px}.hero-ph .card span{font-size:13.5px;color:var(--mut)}
 .adv{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:72px;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.adv div{display:flex;gap:16px;align-items:flex-start}
+.adv>div{display:flex;gap:16px;align-items:flex-start}
 .adv svg{flex:none;width:44px;height:44px;padding:10px;border-radius:12px;background:var(--gl);color:var(--g)}
 .adv b{display:block;font-size:16px;line-height:1.35}.adv span{font-size:14.5px;color:var(--mut)}
 
@@ -180,9 +180,10 @@ footer{background:var(--gd);color:#a9c4b7;padding:48px 0;font-size:14px}
   .rl,.yk{display:none}.rs{display:inline}
   .hdr{height:68px}.hdr .logo img{height:36px}.hdr .btn{height:42px;padding:0 16px;font-size:14px}
   .head{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:36px}
-  .hero{padding-top:28px}.hero .ctas .btn{flex:1}
+  .hero{padding-top:28px}
   .adv{grid-template-columns:1fr;margin-top:48px}
-  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}.stat{padding:16px}.stat b{font-size:26px}
+  .stats{grid-template-columns:1fr;gap:10px}.stat{padding:18px 20px;display:flex;align-items:center;gap:16px}.stat b{font-size:30px;min-width:64px}.stat span{margin-top:0}
+  .hero .ctas{flex-direction:column}.hero .ctas .btn{width:100%}
   .anest{grid-template-columns:1fr 1fr}
   .svc{padding:44px 20px;border-radius:var(--r)}
   .srow{grid-template-columns:36px 1fr 40px;gap:12px;padding:20px 0}.srow .ar{width:40px;height:40px}
@@ -210,7 +211,7 @@ footer{background:var(--gd);color:#a9c4b7;padding:48px 0;font-size:14px}
   <div class="w">
     <div class="hero-grid">
       <div>
-        <div class="rating rv"><i>★★★★★</i>5,0 · 189 оценок<span class="yk">&nbsp;на Яндекс Картах</span></div>
+        <div class="rating rv"><i>★★★★★</i><span>5,0 · 189 оценок<span class="yk"> на Яндекс Картах</span></span></div>
         <h1 class="rv d1">Комфортная стоматология <span>для детей и взрослых</span></h1>
         <p class="lead rv d2">Лечение и восстановление зубов без боли и стресса — с гарантией. С 2009 года рядом с площадью Заставы, и многие пациенты с нами больше десяти лет.</p>
         <div class="ctas rv d3">
