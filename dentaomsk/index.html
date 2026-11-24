@@ -65,7 +65,7 @@ header.sc{box-shadow:0 1px 0 var(--line)}
 .hero-txt p{color:var(--mut);max-width:30em}
 .hero-txt .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
 .hero-ph{position:relative}
-.hero-ph img{width:100%;height:100%;object-fit:cover}
+.hero-ph .hm{position:absolute;inset:0}.hero-ph img{width:100%;height:100%;object-fit:cover}
 .hero-ph .tag{position:absolute;left:-64px;bottom:56px;background:var(--wine);color:#fff;padding:26px 30px;max-width:260px}
 .hero-ph .tag b{display:block;font-family:'Roboto Slab',serif;font-weight:300;font-size:44px;line-height:1}
 .hero-ph .tag span{display:block;margin-top:8px;font-size:13.5px;color:#e6c5d1}
@@ -134,10 +134,10 @@ header.sc{box-shadow:0 1px 0 var(--line)}
 /* team */
 .team{display:grid;grid-template-columns:4fr 8fr;gap:72px}
 .tlist{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
-.tp{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:baseline;transition:padding .3s}
+.tp{padding:20px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px;transition:padding .3s}
 .tp:hover{padding-left:10px}
 .tp b{font-weight:700;font-size:16px}
-.tp span{font-size:13.5px;color:var(--mut);text-align:right}
+.tp span{font-size:14px;color:var(--mut)}
 .tp.lead b{color:var(--wine)}
 
 /* reviews */
@@ -166,7 +166,7 @@ header.sc{box-shadow:0 1px 0 var(--line)}
 .bk .lft{position:relative;min-height:100%}
 .bk .lft img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .bk .lft:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(51,6,22,.15),rgba(51,6,22,.88))}
-.bk .lft .in{position:relative;z-index:2;height:100%;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.bk .lft .lin{position:relative;z-index:2;height:100%;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
 .bk .lft h2{color:#fff;font-size:clamp(30px,3vw,42px)}
 .bk dl{display:grid;gap:22px;margin-top:36px}
 .bk dt{font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rose)}
@@ -215,8 +215,9 @@ footer{padding:56px 0;font-size:13.5px;color:var(--mut);border-top:1px solid var
   .w{width:calc(100% - 32px)}
   .rl{display:none}.rs{display:inline}
   .hdr{height:72px}.mark b{font-size:20px}.mark span{font-size:8px;letter-spacing:.26em}.hdr .btn{height:42px;padding:0 16px;font-size:11.5px}
-  .hero{padding-top:16px}.hero-txt{padding:44px 24px}.hero-txt .ctas .btn{flex:1}
-  .hero-ph{height:340px}.hero-ph .tag{padding:18px 20px}.hero-ph .tag b{font-size:32px}
+  .hero{padding-top:16px}.hero-txt{padding:44px 24px}
+  .hero-ph{height:340px}.hero-txt h1{margin-top:28px}
+  .hero-txt .ctas{flex-direction:column}.hero-txt .ctas .btn{width:100%}.hero-ph .tag{padding:18px 20px}.hero-ph .tag b{font-size:32px}
   .facts div{padding:22px 18px}
   .svc{grid-template-columns:1fr}.s{min-height:0;padding:32px 24px}
   .gal-top{flex-direction:column;align-items:flex-start}
@@ -227,7 +228,7 @@ footer{padding:56px 0;font-size:13.5px;color:var(--mut);border-top:1px solid var
   .score b{font-size:96px}
   .quote{min-height:300px}
   .docs{grid-template-columns:1fr 1fr}
-  .bk .lft{min-height:auto}.bk .lft .in{padding:40px 24px}.form{padding:32px 20px}.row2{grid-template-columns:1fr}
+  .bk .lft{min-height:auto}.bk .lft .lin{padding:40px 24px}.form{padding:32px 20px}.row2{grid-template-columns:1fr}
   .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60}.mbar .btn{flex:1;height:60px}
   footer{padding-bottom:100px}
 }
@@ -248,12 +249,12 @@ footer{padding:56px 0;font-size:13.5px;color:var(--mut);border-top:1px solid var
     <div class="hero-grid">
       <div class="hero-txt">
         <div class="big rv">28<sup>лет<br>с вами</sup></div>
-        <h1 class="rv d1">Красивая и здоровая улыбка <b>в самом центре Омска</b></h1>
+        <h1 class="rv d1">Красивая и здоровая улыбка <b>в&nbsp;самом центре Омска</b></h1>
         <p class="rv d2">Терапия, ортопедия, хирургия, ортодонтия, собственная зуботехническая лаборатория и кабинет косметолога — на Ильинской, 17.</p>
         <div class="ctas rv d3"><a class="btn btn-w" href="#book">Записаться онлайн</a><a class="btn btn-l" href="#prices">Цены</a></div>
       </div>
-      <div class="hero-ph mask rv d1" id="heroPh">
-        <img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_05_2645-1024x683.jpg" alt="Кабинет клиники Дента Люкс">
+      <div class="hero-ph rv d1" id="heroPh">
+        <div class="mask hm"><img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_05_2645-1024x683.jpg" alt="Кабинет клиники Дента Люкс"></div>
         <div class="tag"><b>500 ₽</b><span>первичный приём и консультация стоматолога</span></div>
       </div>
     </div>
@@ -374,7 +375,7 @@ footer{padding:56px 0;font-size:13.5px;color:var(--mut);border-top:1px solid var
   <div class="w bk">
     <div class="lft">
       <img src="https://dentalux-omsk.ru/wp-content/uploads/2025/06/f_28_0952-1024x683.jpg" alt="" loading="lazy">
-      <div class="in">
+      <div class="lin">
         <span class="label lt">Как нас найти</span>
         <h2>Ильинская, 17 — рядом с Краеведческим музеем</h2>
         <dl>
