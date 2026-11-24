@@ -38,6 +38,7 @@ h3{font-size:20px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
 /* ribbon + header */
+.rs{display:none}
 .ribbon{background:var(--gd);color:#cfe3d8;font-size:13px;text-align:center;padding:9px 16px}.ribbon b{color:#fff;font-weight:600}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
 header.sc{border-color:var(--line)}
@@ -176,6 +177,7 @@ footer{background:var(--gd);color:#a9c4b7;padding:48px 0;font-size:14px}
 @media (max-width:640px){
   :root{--sec:72px;--gap:16px}
   .w{width:calc(100% - 32px)}
+  .rl,.yk{display:none}.rs{display:inline}
   .hdr{height:68px}.hdr .logo img{height:36px}.hdr .btn{height:42px;padding:0 16px;font-size:14px}
   .head{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:36px}
   .hero{padding-top:28px}.hero .ctas .btn{flex:1}
@@ -193,7 +195,7 @@ footer{background:var(--gd);color:#a9c4b7;padding:48px 0;font-size:14px}
 </style>
 </head>
 <body>
-<div class="ribbon"><b>Концепт редизайна сайта stomat36.ru</b> — подготовлен Pixel Forge на основе материалов вашего сайта и отзывов на Яндекс Картах. Запись на странице демонстрационная.</div>
+<div class="ribbon"><b>Концепт редизайна сайта stomat36.ru</b><span class="rl"> — подготовлен Pixel Forge на основе материалов вашего сайта и отзывов на Яндекс Картах. Запись на странице демонстрационная.</span><span class="rs"> · Pixel Forge</span></div>
 <header id="hdr"><div class="w hdr">
   <a class="logo" href="#top"><img src="https://stomat36.ru/wp-content/themes/stomatology/images/logo.png" alt="Современная стоматология"></a>
   <nav><a href="#about">О клинике</a><a href="#services">Услуги</a><a href="#doctors">Врачи</a><a href="#reviews">Отзывы</a><a href="#book">Контакты</a></nav>
@@ -208,7 +210,7 @@ footer{background:var(--gd);color:#a9c4b7;padding:48px 0;font-size:14px}
   <div class="w">
     <div class="hero-grid">
       <div>
-        <div class="rating rv"><i>★★★★★</i>5,0 · 189 оценок на Яндекс Картах</div>
+        <div class="rating rv"><i>★★★★★</i>5,0 · 189 оценок<span class="yk">&nbsp;на Яндекс Картах</span></div>
         <h1 class="rv d1">Комфортная стоматология <span>для детей и взрослых</span></h1>
         <p class="lead rv d2">Лечение и восстановление зубов без боли и стресса — с гарантией. С 2009 года рядом с площадью Заставы, и многие пациенты с нами больше десяти лет.</p>
         <div class="ctas rv d3">
